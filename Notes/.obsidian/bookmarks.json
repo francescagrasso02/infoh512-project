@@ -1,0 +1,143 @@
+{
+  "items": [
+    {
+      "type": "group",
+      "ctime": 1779188339694,
+      "items": [
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Winner-takes-all.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Conceptos Fundamentales. SL.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Conjunto de entrenamiento.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Dilema Sesgo-Varianza.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Error de generalización.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Holdout (Entrenamiento - Test).md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Identificacion Estructural.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Identificacion Parametrica.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Subajuste (underfitting).md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Leave-one-out (LOO).md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Minimización del Riesgo Empírico.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Modelo no lineal.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Optimización multivariante.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "Procedimiento de Aprendizaje.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Problema de los modelos lineales.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Ruido Intrínseco.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Selección de Modelos.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Sesgo (Falta de potencia).md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Sobreajuste (overfitting).md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Técnicas de Validación.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Validación Cruzada K-fold.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188354721,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Combinación de estimadores.md",
+          "title": ""
+        },
+        {
+          "type": "file",
+          "ctime": 1779188354721,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Bagging (Bootstrap aggregating).md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779188329705,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Varianza (Sensibilidad al ruido).md"
+        },
+        {
+          "type": "file",
+          "ctime": 1779189505644,
+          "path": "INFO-F422 Statistical Foundations of Machine Learning/Temas/Modelos Supervisados.md"
+        }
+      ],
+      "title": "6. Supervised Learning"
+    },
+    {
+      "type": "group",
+      "ctime": 1779188431421,
+      "items": [],
+      "title": "2. Foundations of Probability"
+    }
+  ]
+}

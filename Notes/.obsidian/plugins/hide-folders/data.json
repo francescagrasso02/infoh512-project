@@ -1,0 +1,15 @@
+{
+  "areFoldersHidden": true,
+  "matchCaseInsensitive": true,
+  "addHiddenFoldersToObsidianIgnoreList": false,
+  "hideBottomStatusBarIndicatorText": false,
+  "enableCompatQuickExplorer": false,
+  "attachmentFolderNames": [
+    "STAT-F405 Time Series Analysis",
+    "STAT-F600 Multivariate and High-Dimensional Statistics",
+    "INFO-H512 Current Trends in Artificial Intelligence",
+    "INFO-H515 Big Data Management and Scalable Analytics",
+    "STAT-S502 Data Management and Analytics",
+    "Proyecto"
+  ]
+}

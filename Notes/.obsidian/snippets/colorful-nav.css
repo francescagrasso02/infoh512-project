@@ -1,0 +1,186 @@
+/* ================================================================
+   COLORFUL NAVIGATION — Universidad 2026
+   Paleta personalizada: Amarillo → Naranja → Coral → Rosa → Magenta → Morado
+   ================================================================ */
+
+/* ── Líneas de indentación base ── */
+.nav-folder-children {
+  border-left: 1.5px solid rgba(120,120,150,0.18);
+  margin-left: 10px;
+  padding-left: 4px;
+}
+.nav-folder.mod-root > .nav-folder-children {
+  border-left: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* ================================================================
+   OCULTAR ICONO DE FOLDER GENÉRICO
+   Solo muestra los iconos personalizados del plugin icon-folder
+   ================================================================ */
+
+/* Oculta el SVG de flecha/folder por defecto */
+.nav-folder-title .nav-folder-collapse-indicator svg {
+  display: none !important;
+}
+
+/* Cuando NO hay icono personalizado: muestra la flecha para poder expandir */
+.nav-folder-title:not(:has(.iconize-icon)) .nav-folder-collapse-indicator svg {
+  display: block !important;
+  opacity: 0.35;
+}
+
+/* Asegura que el icono personalizado de iconize sea visible y bien posicionado */
+.nav-folder-title .iconize-icon {
+  display: inline-flex !important;
+  align-items: center;
+}
+
+/* ================================================================
+   INFO-F422 — Statistical ML   →  🟡 #FFD700
+   ================================================================ */
+.nav-folder-title[data-path="INFO-F422 Statistical Foundations of Machine Learning"]
+  .nav-folder-title-content {
+  color: #FFD700 !important;
+}
+.nav-folder-title[data-path="INFO-F422 Statistical Foundations of Machine Learning"]
+  + .nav-folder-children {
+  border-left: 2px solid rgba(255,215,0,0.45) !important;
+}
+.nav-folder-title[data-path="INFO-F422 Statistical Foundations of Machine Learning"]
+  + .nav-folder-children .nav-folder-children {
+  border-left-color: rgba(255,215,0,0.22) !important;
+}
+.nav-folder-title[data-path^="INFO-F422 Statistical Foundations of Machine Learning/"]
+  .nav-folder-title-content {
+  color: #e6c200;
+}
+
+
+/* ================================================================
+   STAT-S502 — Data Analytics   →  🟠 #FF8800
+   ================================================================ */
+.nav-folder-title[data-path="STAT-S502 Data Management and Analytics"]
+  .nav-folder-title-content {
+  color: #FF8800 !important;
+}
+.nav-folder-title[data-path="STAT-S502 Data Management and Analytics"]
+  + .nav-folder-children {
+  border-left: 2px solid rgba(255,136,0,0.45) !important;
+}
+.nav-folder-title[data-path="STAT-S502 Data Management and Analytics"]
+  + .nav-folder-children .nav-folder-children {
+  border-left-color: rgba(255,136,0,0.22) !important;
+}
+.nav-folder-title[data-path^="STAT-S502 Data Management and Analytics/"]
+  .nav-folder-title-content {
+  color: #e67a00;
+}
+
+
+/* ================================================================
+   STAT-F405 — Time Series   →  🩷 #FF4D4D
+   ================================================================ */
+.nav-folder-title[data-path="STAT-F405 Time Series Analysis"]
+  .nav-folder-title-content {
+  color: #FF4D4D !important;
+}
+.nav-folder-title[data-path="STAT-F405 Time Series Analysis"]
+  + .nav-folder-children {
+  border-left: 2px solid rgba(255,77,77,0.45) !important;
+}
+.nav-folder-title[data-path="STAT-F405 Time Series Analysis"]
+  + .nav-folder-children .nav-folder-children {
+  border-left-color: rgba(255,77,77,0.22) !important;
+}
+.nav-folder-title[data-path^="STAT-F405 Time Series Analysis/"]
+  .nav-folder-title-content {
+  color: #e64444;
+}
+
+
+/* ================================================================
+   STAT-F600 — Multivariate Stats   →  💗 #FF1177
+   ================================================================ */
+.nav-folder-title[data-path="STAT-F600 Multivariate and High-Dimensional Statistics"]
+  .nav-folder-title-content {
+  color: #FF1177 !important;
+}
+.nav-folder-title[data-path="STAT-F600 Multivariate and High-Dimensional Statistics"]
+  + .nav-folder-children {
+  border-left: 2px solid rgba(255,17,119,0.45) !important;
+}
+.nav-folder-title[data-path="STAT-F600 Multivariate and High-Dimensional Statistics"]
+  + .nav-folder-children .nav-folder-children {
+  border-left-color: rgba(255,17,119,0.22) !important;
+}
+.nav-folder-title[data-path^="STAT-F600 Multivariate and High-Dimensional Statistics/"]
+  .nav-folder-title-content {
+  color: #e6006a;
+}
+
+
+/* ================================================================
+   INFO-H515 — Big Data   →  💜 #CC1199
+   ================================================================ */
+.nav-folder-title[data-path="INFO-H515 Big Data Management and Scalable Analytics"]
+  .nav-folder-title-content {
+  color: #CC1199 !important;
+}
+.nav-folder-title[data-path="INFO-H515 Big Data Management and Scalable Analytics"]
+  + .nav-folder-children {
+  border-left: 2px solid rgba(204,17,153,0.45) !important;
+}
+.nav-folder-title[data-path="INFO-H515 Big Data Management and Scalable Analytics"]
+  + .nav-folder-children .nav-folder-children {
+  border-left-color: rgba(204,17,153,0.22) !important;
+}
+.nav-folder-title[data-path^="INFO-H515 Big Data Management and Scalable Analytics/"]
+  .nav-folder-title-content {
+  color: #b50088;
+}
+
+
+/* ================================================================
+   INFO-H512 — AI Trends   →  🟣 #7722BB
+   ================================================================ */
+.nav-folder-title[data-path="INFO-H512 Current Trends in Artificial Intelligence"]
+  .nav-folder-title-content {
+  color: #7722BB !important;
+}
+.nav-folder-title[data-path="INFO-H512 Current Trends in Artificial Intelligence"]
+  + .nav-folder-children {
+  border-left: 2px solid rgba(119,34,187,0.45) !important;
+}
+.nav-folder-title[data-path="INFO-H512 Current Trends in Artificial Intelligence"]
+  + .nav-folder-children .nav-folder-children {
+  border-left-color: rgba(119,34,187,0.22) !important;
+}
+.nav-folder-title[data-path^="INFO-H512 Current Trends in Artificial Intelligence/"]
+  .nav-folder-title-content {
+  color: #6611aa;
+}
+
+
+/* ================================================================
+   SUBCARPETAS — colores consistentes en todas las materias
+   ================================================================ */
+.nav-folder-title[data-path$="/Basics"] .nav-folder-title-content         { color: #d97706 !important; }
+.nav-folder-title[data-path$="/Libros"] .nav-folder-title-content         { color: #92400e !important; }
+.nav-folder-title[data-path$="/Slides"] .nav-folder-title-content         { color: #0369a1 !important; }
+.nav-folder-title[data-path$="/Sesion de Ejercicios"] .nav-folder-title-content,
+.nav-folder-title[data-path$="/Sesion Ejercicios"] .nav-folder-title-content { color: #059669 !important; }
+.nav-folder-title[data-path$="/Proyecto"] .nav-folder-title-content       { color: #dc2626 !important; }
+.nav-folder-title[data-path$="/Examen"] .nav-folder-title-content         { color: #dc2626 !important; }
+.nav-folder-title[data-path$="/Temas"] .nav-folder-title-content,
+.nav-folder-title[data-path$="/Resources"] .nav-folder-title-content      { color: #6b7280 !important; }
+.nav-folder-title[data-path$="/Github Codes"] .nav-folder-title-content   { color: #166534 !important; }
+
+
+/* ================================================================
+   HOVER
+   ================================================================ */
+.nav-folder:hover > .nav-folder-children {
+  border-left-width: 2.5px;
+}
