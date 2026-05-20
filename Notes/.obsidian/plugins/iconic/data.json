@@ -300,6 +300,9 @@
     "Modelo no lineal.md": {
       "icon": "☁️"
     },
+    "Proyect Scope.md": {
+      "icon": "lucide-list-collapse"
+    },
     "STAT-S502 Data Management and Analytics/Apuntes de Clase/10.Alteo Group.md": {
       "icon": "lucide-presentation",
       "color": "red"
@@ -323,6 +326,12 @@
     },
     "Varianza (Sensibilidad al ruido).md": {
       "icon": "☁️"
+    },
+    "docs/Proyecto - ES.md": {
+      "icon": "💮"
+    },
+    "key-papers/Class Slide.pdf": {
+      "icon": "lucide-presentation"
     }
   },
   "bookmarkIcons": {

@@ -9,7 +9,9 @@
   "accessibility": {
     "highTextContrast": true
   },
-  "knownTags": {},
+  "knownTags": {
+    "kamila": 1
+  },
   "tagColors": {},
   "_version": 4
 }

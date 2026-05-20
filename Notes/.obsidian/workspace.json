@@ -4,43 +4,23 @@
     "type": "split",
     "children": [
       {
-        "id": "78f20b7b297b756c",
+        "id": "24d5858a2fb901ca",
         "type": "tabs",
         "children": [
           {
-            "id": "761ff3dfa5152461",
+            "id": "963cf2de2270509a",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/Proyecto.md",
+                "file": "Topics/Counterfactual for Explainability and Fairness in Machine Learning.md",
                 "mode": "source",
                 "source": false
               },
+              "pinned": true,
               "icon": "lucide-file",
-              "title": "Proyecto"
-            }
-          }
-        ]
-      },
-      {
-        "id": "20de711dab81873c",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "b734994ac4447115",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "docs/Descripcion.pdf",
-                "page": 1,
-                "left": -13,
-                "top": 846,
-                "zoom": 1.1710084033613446
-              },
-              "icon": "lucide-file-text",
-              "title": "Descripcion"
+              "title": "Counterfactual for Explainability and Fairness in Machine Learning"
             }
           }
         ]
@@ -118,7 +98,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 294
+    "width": 567
   },
   "right": {
     "id": "51bac4db2fd9cccd",
@@ -127,7 +107,7 @@
       {
         "id": "fed4bafafb084d09",
         "type": "tabs",
-        "dimension": 60.667903525046384,
+        "dimension": 31.72541743970315,
         "children": [
           {
             "id": "b71115465861c292",
@@ -147,7 +127,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Proyecto.md",
+                "file": "Topics/Counterfactual for Explainability and Fairness in Machine Learning.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -157,7 +137,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Enlaces entrantes de Proyecto"
+              "title": "Enlaces entrantes de Counterfactual for Explainability and Fairness in Machine Learning"
             }
           },
           {
@@ -194,13 +174,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/Proyecto.md",
+                "file": "Topics/Counterfactual for Explainability and Fairness in Machine Learning.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Esquema de Proyecto"
+              "title": "Esquema de Counterfactual for Explainability and Fairness in Machine Learning"
             }
           },
           {
@@ -259,80 +239,23 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       },
       {
         "id": "e99e696c86ee6dfa",
         "type": "tabs",
-        "dimension": 39.332096474953616,
+        "dimension": 68.27458256029685,
         "children": [
           {
-            "id": "64ba0f26cc8cb1ec",
+            "id": "761ff3dfa5152461",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "graph",
               "state": {},
+              "pinned": true,
               "icon": "lucide-git-fork",
               "title": "Vista gráfica"
-            }
-          },
-          {
-            "id": "82da6283ce339b2c",
-            "type": "leaf",
-            "state": {
-              "type": "localgraph",
-              "state": {
-                "file": "docs/Proyecto.md",
-                "options": {
-                  "collapse-filter": false,
-                  "search": "",
-                  "localJumps": 2,
-                  "localBacklinks": true,
-                  "localForelinks": true,
-                  "localInterlinks": false,
-                  "showTags": false,
-                  "showAttachments": true,
-                  "hideUnresolved": false,
-                  "collapse-color-groups": true,
-                  "colorGroups": [
-                    {
-                      "query": "path:\"INFO-F422 Statistical Foundations of Machine Learning/Apuntes de Clase\"  ",
-                      "color": {
-                        "a": 1,
-                        "rgb": 8147680
-                      }
-                    },
-                    {
-                      "query": "path:\"INFO-F422 Statistical Foundations of Machine Learning/Slides\"  ",
-                      "color": {
-                        "a": 1,
-                        "rgb": 11548616
-                      }
-                    },
-                    {
-                      "query": "path:\"INFO-F422 Statistical Foundations of Machine Learning/Temas\"  ",
-                      "color": {
-                        "a": 1,
-                        "rgb": 14701180
-                      }
-                    }
-                  ],
-                  "collapse-display": false,
-                  "showArrow": true,
-                  "textFadeMultiplier": -2.4,
-                  "nodeSizeMultiplier": 1,
-                  "lineSizeMultiplier": 1.43960498960499,
-                  "collapse-forces": false,
-                  "centerStrength": 0.414760914760915,
-                  "repelStrength": 18.2744282744283,
-                  "linkStrength": 0.743243243243243,
-                  "linkDistance": 180,
-                  "scale": 0.16822708821569676,
-                  "close": true
-                }
-              },
-              "icon": "lucide-git-fork",
-              "title": "Gráfico de Proyecto"
             }
           },
           {
@@ -364,25 +287,12 @@
               "icon": "timer",
               "title": "Timer"
             }
-          },
-          {
-            "id": "6e7387f59362e23c",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "empty",
-              "state": {},
-              "pinned": true,
-              "icon": "lucide-file",
-              "title": "Nueva pestaña"
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 408
+    "width": 631
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -410,15 +320,27 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "761ff3dfa5152461",
+  "active": "d8d5672de6e342cf",
   "lastOpenFiles": [
-    "docs/Descripcion.pdf",
-    "docs/Proyecto.md",
-    "Bienvenido.md",
-    "README.md",
+    "key-papers/A Survey of Algorithmic Recourse - Contrastive Explanations and Consequential Recommendations.pdf",
+    "Topics/Counterfactual for Explainability and Fairness in Machine Learning.md",
+    "Proyect Scope.md",
+    "key-papers/Class Slide.pdf",
+    "key-papers/Explaining Machine Learning CLassifiers through Diverse Counterfactual Explanations.pdf",
+    "key-papers/Fairness Aware Counterfactuals for Subgroups.pdf",
+    "key-papers/Counterfactual Explanations without Opening the Black Box - Automated Decisions and the GDPR.pdf",
+    "docs/Proyecto - ES.md",
+    "docs/Project Description.pdf",
+    "README 1.md",
     "TODO.md",
+    "README.md",
+    "Questions Board.md",
+    "Report Format/AuthorKit26-1.zip",
+    "Report Format",
+    "Nueva carpeta",
+    "Bienvenido.md",
+    "docs/Seminar Notes.txt",
     "data/README.md",
-    "docs",
     "To - Do.md",
     "INFO-F422 Statistical Foundations of Machine Learning/Examen/Code Guide.md",
     "Notas.md",
@@ -433,20 +355,8 @@
     "INFO-F422 Statistical Foundations of Machine Learning/Temas/Subajuste (underfitting).md",
     "INFO-F422 Statistical Foundations of Machine Learning/Temas/Sesgo (bias).md",
     "INFO-F422 Statistical Foundations of Machine Learning/Temas/Ruido Intrínseco.md",
-    "INFO-F422 Statistical Foundations of Machine Learning/Slides/6.Supervised Learning.pdf",
     "INFO-F422 Statistical Foundations of Machine Learning/Temas/Distribución Muestral.md",
     "INFO-F422 Statistical Foundations of Machine Learning/Temas/Bootstrap.md",
-    "INFO-F422 Statistical Foundations of Machine Learning/Temas/Modelo Probabilístico.md",
-    "INFO-F422 Statistical Foundations of Machine Learning/Temas/Riesgo Empirico.md",
-    "INFO-F422 Statistical Foundations of Machine Learning/Temas/Minimización del Riesgo Empírico.md",
-    "INFO-F422 Statistical Foundations of Machine Learning/Temas/Distribución de probabilidad.md",
-    "INFO-F422 Statistical Foundations of Machine Learning/Libros/bootstrap.pdf",
-    "INFO-F422 Statistical Foundations of Machine Learning/Slides/2. Foundations of Probability.pdf",
-    "Apuntes DB.base",
-    "INFO-F422 Statistical Foundations of Machine Learning/F422-Git del profe/gbcodepy/K/Probability SA.ipynb",
-    "INFO-F422 Statistical Foundations of Machine Learning/F422-Git del profe/gbcodepy/K/Probability SA.py",
-    "INFO-F422 Statistical Foundations of Machine Learning/F422-Git del profe/gbcodepy/K/Nivel 1.py",
-    "La teoría de conjuntos",
     "INFO-F422 Statistical Foundations of Machine Learning/Self-Assesment Test/2. Estimation Self Assesment Test/img/2. Estimation Self Assesment Test-1779115864543.webp",
     "INFO-F422 Statistical Foundations of Machine Learning/Self-Assesment Test/2. Estimation Self Assesment Test/img/2. Estimation Self Assesment Test-1779115984897.webp",
     "INFO-F422 Statistical Foundations of Machine Learning/Self-Assesment Test/2. Estimation Self Assesment Test/img/2. Estimation Self Assesment Test-1779115943926.webp",

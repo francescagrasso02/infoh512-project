@@ -12,7 +12,7 @@
   "maxLabelCharacters": 18,
   "linkLabelSize": 7,
   "nodeLabelSize": 6,
-  "connectionType": "both",
+  "connectionType": "note",
   "noteFillColor": "#7c8594",
   "blockFillColor": "#926ec9"
 }

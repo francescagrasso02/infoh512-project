@@ -171,6 +171,27 @@
         "type": "FILES",
         "pattern": "To - Do.md",
         "patternType": "STRICT"
+      },
+      {
+        "name": "",
+        "active": true,
+        "type": "FILES",
+        "pattern": "Proyect Scope.md",
+        "patternType": "STRICT"
+      },
+      {
+        "name": "",
+        "active": true,
+        "type": "FILES",
+        "pattern": "Questions Board.md",
+        "patternType": "STRICT"
+      },
+      {
+        "name": "",
+        "active": true,
+        "type": "FILES",
+        "pattern": "TODO.md",
+        "patternType": "STRICT"
       }
     ],
     "frontMatter": [
