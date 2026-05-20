@@ -7,8 +7,6 @@ Counterfactual for Explainability and Fairness in Machine Learning
 **Slide:** [[Class Slide.pdf]]
 - ​topic: Counterfactuals for Explainability and Fairness in Machine Learning
 - materials: [video](https://drive.google.com/file/d/1Oe-5Mk97zK8Bg6LE3A4CZOzwQB3bG7Ur/view?usp=drive_web) / [slides](https://drive.google.com/open?id=1L1Z2VX1HyDb3GbxJ6KcrIR2YbxZ-sKBy)
-- extra reading: 
-	- [[Fairness of Algorithmic Recourse]]
 
 # Resources
 Here are some of the resources the professor has recommended for this topic at the UV.

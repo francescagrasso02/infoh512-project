@@ -4,8 +4,32 @@
     "type": "split",
     "children": [
       {
+        "id": "36c692ad9fbb62a7",
+        "type": "tabs",
+        "dimension": 48.01682692307692,
+        "children": [
+          {
+            "id": "15e9e7278e324702",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Other Docs/GLANCE.pdf",
+                "page": 36,
+                "left": 81,
+                "top": 642,
+                "zoom": 1.7
+              },
+              "icon": "lucide-file-text",
+              "title": "GLANCE"
+            }
+          }
+        ]
+      },
+      {
         "id": "24d5858a2fb901ca",
         "type": "tabs",
+        "dimension": 51.98317307692307,
         "children": [
           {
             "id": "963cf2de2270509a",
@@ -24,43 +48,21 @@
             }
           },
           {
-            "id": "23531b7e01b67853",
+            "id": "6937391e19a2227e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "3. Topics/Survey on Counterfactual Explanations and Recourse.md",
+                "file": "TODO.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Survey on Counterfactual Explanations and Recourse"
+              "title": "TODO"
             }
           }
         ],
         "currentTab": 1
-      },
-      {
-        "id": "7bccb40edc64f5c8",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "ebbcf76cd19ef7be",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Other Docs/GLANCE.pdf",
-                "page": 4,
-                "left": -18,
-                "top": 37,
-                "zoom": 0.9019607843137254
-              },
-              "icon": "lucide-file-text",
-              "title": "GLANCE"
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -72,7 +74,6 @@
       {
         "id": "e301f069e0abf5a6",
         "type": "tabs",
-        "dimension": 73.09941520467837,
         "children": [
           {
             "id": "d8d5672de6e342cf",
@@ -115,27 +116,10 @@
             }
           }
         ]
-      },
-      {
-        "id": "6bd6e0b87c07b4b2",
-        "type": "tabs",
-        "dimension": 26.900584795321635,
-        "children": [
-          {
-            "id": "474e083d6a284f07",
-            "type": "leaf",
-            "state": {
-              "type": "pet-view",
-              "state": {},
-              "icon": "cat",
-              "title": "Notes Pets"
-            }
-          }
-        ]
       }
     ],
     "direction": "horizontal",
-    "width": 567
+    "width": 522
   },
   "right": {
     "id": "51bac4db2fd9cccd",
@@ -144,7 +128,7 @@
       {
         "id": "fed4bafafb084d09",
         "type": "tabs",
-        "dimension": 31.44712430426716,
+        "dimension": 23.840445269016698,
         "children": [
           {
             "id": "b71115465861c292",
@@ -152,10 +136,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "3. Topics/Survey on Counterfactual Explanations and Recourse.md"
+                "file": "TODO.md"
               },
               "icon": "lucide-info",
-              "title": "Propiedades de los archivos para Survey on Counterfactual Explanations and Recourse"
+              "title": "Propiedades de los archivos para TODO"
             }
           },
           {
@@ -164,13 +148,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "3. Topics/Survey on Counterfactual Explanations and Recourse.md",
+                "file": "TODO.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Esquema de Survey on Counterfactual Explanations and Recourse"
+              "title": "Esquema de TODO"
             }
           },
           {
@@ -179,7 +163,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "3. Topics/Survey on Counterfactual Explanations and Recourse.md",
+                "file": "TODO.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -189,7 +173,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Enlaces entrantes de Survey on Counterfactual Explanations and Recourse"
+              "title": "Enlaces entrantes de TODO"
             }
           },
           {
@@ -198,12 +182,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "3. Topics/Survey on Counterfactual Explanations and Recourse.md",
+                "file": "TODO.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Enlaces salientes de Survey on Counterfactual Explanations and Recourse"
+              "title": "Enlaces salientes de TODO"
             }
           },
           {
@@ -280,16 +264,14 @@
       {
         "id": "e99e696c86ee6dfa",
         "type": "tabs",
-        "dimension": 68.55287569573284,
+        "dimension": 76.1595547309833,
         "children": [
           {
-            "id": "424baae3fd925b63",
+            "id": "ebbcf76cd19ef7be",
             "type": "leaf",
-            "pinned": true,
             "state": {
               "type": "graph",
               "state": {},
-              "pinned": true,
               "icon": "lucide-git-fork",
               "title": "Vista gráfica"
             }
@@ -328,7 +310,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 522
+    "width": 599
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -356,25 +338,25 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "23531b7e01b67853",
+  "active": "6937391e19a2227e",
   "lastOpenFiles": [
+    "3. Topics/GLANCE - global actions in a nutshell for counterfactual explainability.md",
     "Other Docs/GLANCE.pdf",
+    "3. Topics/Our Topic.md",
+    "3. Topics/Counterfactual Fairness.md",
+    "Other Docs/Counterfactual Fairness.pdf",
+    "3. Topics/Fairness of Algorithmic Recourse.md",
     "3. Topics/Survey on Counterfactual Explanations and Recourse.md",
     "3. Topics/Explaining Machine Learning Classifier.md",
-    "3. Topics/GLANCE - global actions in a nutshell for counterfactual explainability.md",
     "3. Topics/Algorithmic Recourse - From Counterfactual Explanations to Interventions.md",
     "3. Topics/Causal Context in Counterfactual Fairness.md",
     "3. Topics/Counterfactual Explanations without Opening the Black Box.md",
-    "3. Topics/Counterfactual Fairness.md",
-    "3. Topics/Our Topic.md",
     "3. Topics/Fairness-Aware Counterfactuals.md",
-    "3. Topics/Fairness of Algorithmic Recourse.md",
     "2. Key-Papers/Fairness Aware Counterfactuals for Subgroups.pdf",
     "2. Key-Papers/Explaining Machine Learning Classifiers through Diverse Counterfactual Explanations.pdf",
     "2. Key-Papers/Counterfactual Explanations without Opening the Black Box - Automated Decisions and the GDPR.pdf",
     "2. Key-Papers/A Survey of Algorithmic Recourse - Contrastive Explanations and Consequential Recommendations.pdf",
     "Other Docs/Beyond Individualized Recourse.pdf",
-    "Other Docs/Counterfactual Fairness.pdf",
     "Other Docs/OIL-AD.pdf",
     "Other Docs/Algorithmic Recourse.pdf",
     "Other Docs",
@@ -392,7 +374,6 @@
     "INFO-F422 Statistical Foundations of Machine Learning/Examen/Code Guide.md",
     "Notas.md",
     "INFO-F422 Statistical Foundations of Machine Learning/Temas/Bias & Variance Trade-off.md",
-    "INFO-F422 Statistical Foundations of Machine Learning/Apuntes de Clase/6.Supervised Learning.md",
     "INFO-F422 Statistical Foundations of Machine Learning/Self-Assesment Test/2. Estimation Self Assesment Test/img/2. Estimation Self Assesment Test-1779115864543.webp",
     "INFO-F422 Statistical Foundations of Machine Learning/Self-Assesment Test/2. Estimation Self Assesment Test/img/2. Estimation Self Assesment Test-1779115984897.webp",
     "INFO-F422 Statistical Foundations of Machine Learning/Self-Assesment Test/2. Estimation Self Assesment Test/img/2. Estimation Self Assesment Test-1779115943926.webp",

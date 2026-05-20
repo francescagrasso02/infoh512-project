@@ -5,7 +5,7 @@ Authors:
   - Chris Russell
 ---
 *PDF*
-[[Counterfactual Fairness]]
+[[Counterfactual Fairness.pdf]]
 
 ```cardlink
 url: https://arxiv.org/abs/1703.06856
