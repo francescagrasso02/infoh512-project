@@ -1,5 +1,8 @@
-[[Counterfactual for Explainability and Fairness in Machine Learning]]
+[[Our Topic]]
+[[Questions Board]]
+[[TODO]]
 
+[[Proyecto - ES]]
 ## Research Question
 *Are the actions suggested by an AI model to prevent employee attrition equally achievable for all demographic groups (e.g., gender, age), and does this fairness depend on the type of model used?*
 
@@ -22,6 +25,9 @@ This project investigates whether these suggested actions are equally easy to fo
 - Karimi et al. (2022) — Algorithmic Recourse Survey: https://dl.acm.org/doi/10.1145/3527848
 - Wachter et al. (2017) — Counterfactual Explanations: https://arxiv.org/abs/1711.00399
 
+### Other References
+- [[Explaining Machine Learning Classifier]]
+- 
 ## Repository Structure
 ```
 ├── papers/         # Reference papers

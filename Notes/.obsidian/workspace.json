@@ -14,13 +14,50 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Topics/Counterfactual for Explainability and Fairness in Machine Learning.md",
+                "file": "3. Topics/Our Topic.md",
                 "mode": "source",
                 "source": false
               },
               "pinned": true,
               "icon": "lucide-file",
-              "title": "Counterfactual for Explainability and Fairness in Machine Learning"
+              "title": "Our Topic"
+            }
+          },
+          {
+            "id": "23531b7e01b67853",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "3. Topics/Survey on Counterfactual Explanations and Recourse.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Survey on Counterfactual Explanations and Recourse"
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "7bccb40edc64f5c8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ebbcf76cd19ef7be",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Other Docs/GLANCE.pdf",
+                "page": 4,
+                "left": -18,
+                "top": 37,
+                "zoom": 0.9019607843137254
+              },
+              "icon": "lucide-file-text",
+              "title": "GLANCE"
             }
           }
         ]
@@ -107,7 +144,7 @@
       {
         "id": "fed4bafafb084d09",
         "type": "tabs",
-        "dimension": 31.72541743970315,
+        "dimension": 31.44712430426716,
         "children": [
           {
             "id": "b71115465861c292",
@@ -115,10 +152,25 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Notas.md"
+                "file": "3. Topics/Survey on Counterfactual Explanations and Recourse.md"
               },
               "icon": "lucide-info",
-              "title": "Propiedades de los archivos para Notas"
+              "title": "Propiedades de los archivos para Survey on Counterfactual Explanations and Recourse"
+            }
+          },
+          {
+            "id": "9f1bf11d87cf8973",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "3. Topics/Survey on Counterfactual Explanations and Recourse.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Esquema de Survey on Counterfactual Explanations and Recourse"
             }
           },
           {
@@ -127,7 +179,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Topics/Counterfactual for Explainability and Fairness in Machine Learning.md",
+                "file": "3. Topics/Survey on Counterfactual Explanations and Recourse.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -137,7 +189,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Enlaces entrantes de Counterfactual for Explainability and Fairness in Machine Learning"
+              "title": "Enlaces entrantes de Survey on Counterfactual Explanations and Recourse"
             }
           },
           {
@@ -146,12 +198,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notas.md",
+                "file": "3. Topics/Survey on Counterfactual Explanations and Recourse.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Enlaces salientes de Notas"
+              "title": "Enlaces salientes de Survey on Counterfactual Explanations and Recourse"
             }
           },
           {
@@ -166,21 +218,6 @@
               },
               "icon": "lucide-archive",
               "title": "Todas las propiedades"
-            }
-          },
-          {
-            "id": "9f1bf11d87cf8973",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "Topics/Counterfactual for Explainability and Fairness in Machine Learning.md",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-list",
-              "title": "Esquema de Counterfactual for Explainability and Fairness in Machine Learning"
             }
           },
           {
@@ -238,16 +275,15 @@
               "title": "Strange New Worlds"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       },
       {
         "id": "e99e696c86ee6dfa",
         "type": "tabs",
-        "dimension": 68.27458256029685,
+        "dimension": 68.55287569573284,
         "children": [
           {
-            "id": "761ff3dfa5152461",
+            "id": "424baae3fd925b63",
             "type": "leaf",
             "pinned": true,
             "state": {
@@ -259,13 +295,13 @@
             }
           },
           {
-            "id": "532eaef9818bfe2c",
+            "id": "08645b6909be9e9f",
             "type": "leaf",
             "state": {
-              "type": "smart-connections-visualizer",
+              "type": "graph",
               "state": {},
-              "icon": "git-fork",
-              "title": "Smart connections visualizer"
+              "icon": "lucide-git-fork",
+              "title": "Vista gráfica"
             }
           },
           {
@@ -292,7 +328,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 631
+    "width": 522
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -320,43 +356,43 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "d8d5672de6e342cf",
+  "active": "23531b7e01b67853",
   "lastOpenFiles": [
-    "key-papers/A Survey of Algorithmic Recourse - Contrastive Explanations and Consequential Recommendations.pdf",
-    "Topics/Counterfactual for Explainability and Fairness in Machine Learning.md",
+    "Other Docs/GLANCE.pdf",
+    "3. Topics/Survey on Counterfactual Explanations and Recourse.md",
+    "3. Topics/Explaining Machine Learning Classifier.md",
+    "3. Topics/GLANCE - global actions in a nutshell for counterfactual explainability.md",
+    "3. Topics/Algorithmic Recourse - From Counterfactual Explanations to Interventions.md",
+    "3. Topics/Causal Context in Counterfactual Fairness.md",
+    "3. Topics/Counterfactual Explanations without Opening the Black Box.md",
+    "3. Topics/Counterfactual Fairness.md",
+    "3. Topics/Our Topic.md",
+    "3. Topics/Fairness-Aware Counterfactuals.md",
+    "3. Topics/Fairness of Algorithmic Recourse.md",
+    "2. Key-Papers/Fairness Aware Counterfactuals for Subgroups.pdf",
+    "2. Key-Papers/Explaining Machine Learning Classifiers through Diverse Counterfactual Explanations.pdf",
+    "2. Key-Papers/Counterfactual Explanations without Opening the Black Box - Automated Decisions and the GDPR.pdf",
+    "2. Key-Papers/A Survey of Algorithmic Recourse - Contrastive Explanations and Consequential Recommendations.pdf",
+    "Other Docs/Beyond Individualized Recourse.pdf",
+    "Other Docs/Counterfactual Fairness.pdf",
+    "Other Docs/OIL-AD.pdf",
+    "Other Docs/Algorithmic Recourse.pdf",
+    "Other Docs",
+    "Topics/Global Counterfactual Explanations.md",
+    "Topics/Sin título.md",
     "Proyect Scope.md",
-    "key-papers/Class Slide.pdf",
-    "key-papers/Explaining Machine Learning CLassifiers through Diverse Counterfactual Explanations.pdf",
-    "key-papers/Fairness Aware Counterfactuals for Subgroups.pdf",
-    "key-papers/Counterfactual Explanations without Opening the Black Box - Automated Decisions and the GDPR.pdf",
-    "docs/Proyecto - ES.md",
-    "docs/Project Description.pdf",
+    "Questions Board.md",
+    "1. Current Trends Docs/Proyecto - ES.md",
     "README 1.md",
     "TODO.md",
     "README.md",
-    "Questions Board.md",
-    "Report Format/AuthorKit26-1.zip",
-    "Report Format",
-    "Nueva carpeta",
     "Bienvenido.md",
-    "docs/Seminar Notes.txt",
     "data/README.md",
     "To - Do.md",
     "INFO-F422 Statistical Foundations of Machine Learning/Examen/Code Guide.md",
     "Notas.md",
     "INFO-F422 Statistical Foundations of Machine Learning/Temas/Bias & Variance Trade-off.md",
     "INFO-F422 Statistical Foundations of Machine Learning/Apuntes de Clase/6.Supervised Learning.md",
-    "INFO-F422 Statistical Foundations of Machine Learning/Temas/Dilema Sesgo-Varianza.md",
-    "Sesgo.md",
-    "INFO-F422 Statistical Foundations of Machine Learning/Temas/Varianza.md",
-    "INFO-F422 Statistical Foundations of Machine Learning/Temas/Modelos Supervisados.md",
-    "INFO-F422 Statistical Foundations of Machine Learning/Temas/Squared Bias.md",
-    "INFO-F422 Statistical Foundations of Machine Learning/Temas/Sobreajuste (overfitting).md",
-    "INFO-F422 Statistical Foundations of Machine Learning/Temas/Subajuste (underfitting).md",
-    "INFO-F422 Statistical Foundations of Machine Learning/Temas/Sesgo (bias).md",
-    "INFO-F422 Statistical Foundations of Machine Learning/Temas/Ruido Intrínseco.md",
-    "INFO-F422 Statistical Foundations of Machine Learning/Temas/Distribución Muestral.md",
-    "INFO-F422 Statistical Foundations of Machine Learning/Temas/Bootstrap.md",
     "INFO-F422 Statistical Foundations of Machine Learning/Self-Assesment Test/2. Estimation Self Assesment Test/img/2. Estimation Self Assesment Test-1779115864543.webp",
     "INFO-F422 Statistical Foundations of Machine Learning/Self-Assesment Test/2. Estimation Self Assesment Test/img/2. Estimation Self Assesment Test-1779115984897.webp",
     "INFO-F422 Statistical Foundations of Machine Learning/Self-Assesment Test/2. Estimation Self Assesment Test/img/2. Estimation Self Assesment Test-1779115943926.webp",

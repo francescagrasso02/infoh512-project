@@ -192,6 +192,13 @@
         "type": "FILES",
         "pattern": "TODO.md",
         "patternType": "STRICT"
+      },
+      {
+        "name": "",
+        "active": true,
+        "type": "FILES",
+        "pattern": "3. Topics/Our Topic.md",
+        "patternType": "STRICT"
       }
     ],
     "frontMatter": [
@@ -227,6 +234,13 @@
         "active": true,
         "type": "DIRECTORIES",
         "pattern": "STAT-F405 Time Series Analysis",
+        "patternType": "STRICT"
+      },
+      {
+        "name": "",
+        "active": true,
+        "type": "DIRECTORIES",
+        "pattern": "1. Current Trends Docs",
         "patternType": "STRICT"
       }
     ],

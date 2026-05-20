@@ -29,6 +29,31 @@
   "appIcons": {},
   "tabIcons": {},
   "fileIcons": {
+    "1. Current Trends Docs/Proyecto - ES.md": {
+      "icon": "💮"
+    },
+    "2. Key-Papers/A Survey of Algorithmic Recourse - Contrastive Explanations and Consequential Recommendations.pdf": {
+      "icon": "lucide-newspaper",
+      "color": "gray"
+    },
+    "2. Key-Papers/Class Slide.pdf": {
+      "icon": "lucide-presentation"
+    },
+    "2. Key-Papers/Counterfactual Explanations without Opening the Black Box - Automated Decisions and the GDPR.pdf": {
+      "icon": "lucide-newspaper",
+      "color": "gray"
+    },
+    "2. Key-Papers/Explaining Machine Learning Classifiers through Diverse Counterfactual Explanations.pdf": {
+      "icon": "lucide-newspaper",
+      "color": "gray"
+    },
+    "2. Key-Papers/Fairness Aware Counterfactuals for Subgroups.pdf": {
+      "icon": "lucide-newspaper",
+      "color": "gray"
+    },
+    "3. Topics/GLANCE - global actions in a nutshell for counterfactual explainability.md": {
+      "icon": "⁉️"
+    },
     "INFO-F422 Statistical Foundations of Machine Learning/Apuntes de Clase/1. Introduction.md": {
       "icon": "lucide-notebook-pen",
       "color": "green"
@@ -326,12 +351,6 @@
     },
     "Varianza (Sensibilidad al ruido).md": {
       "icon": "☁️"
-    },
-    "docs/Proyecto - ES.md": {
-      "icon": "💮"
-    },
-    "key-papers/Class Slide.pdf": {
-      "icon": "lucide-presentation"
     }
   },
   "bookmarkIcons": {
@@ -353,11 +372,17 @@
   },
   "tagIcons": {},
   "propertyIcons": {
+    "Authors": {
+      "icon": "🗣️"
+    },
     "Last Score": {
       "icon": "lucide-calculator"
     },
     "Slide": {
       "icon": "lucide-presentation"
+    },
+    "undefined": {
+      "icon": "🗣️"
     }
   },
   "ribbonIcons": {},

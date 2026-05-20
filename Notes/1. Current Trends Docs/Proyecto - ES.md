@@ -69,4 +69,5 @@ Informe claro, conciso y bien estructurado; uso eficaz de figuras y tablas.
 
 # Entregables 
 - Un PDF report de 4 paginas, pero AAAI del 2026
+  [[AuthorKit26-1.zip]]
 - Una presentacion 
