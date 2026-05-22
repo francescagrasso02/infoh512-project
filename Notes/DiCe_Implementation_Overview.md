@@ -47,12 +47,12 @@ So we have the IBM HR Dataset (1,470 employees)
 5. 
 
 
-### 4a. Specifically regarding ML classifier
+### 4a. Specificities regarding ML classifier
 Boosting and random forest are for definition models that are not so transparent for humans as it is not easy to understand why one result is obtained from given model in an interpretable way (XAI from DataCamp).
 
-### 4b. Specifically regarding DiCE model 
+### 4b. Specificities regarding DiCE model 
     > https://medium.com/analytics-vidhya/dice-ml-models-with-counterfactual-explanations-for-the-sunk-titanic-30aa035056e0
-a. **Proximity (default weight: 0.5) vs diversity (default 1.0)** are changeable values when we generate counterfactual examples. 
+- a. **Proximity (default weight: 0.5) vs diversity (default 1.0)** are changeable values when we generate counterfactual examples. 
   To see how these weights generate different sets of various counterfactual explanations one idea would be to put a iteration variable (for loop with different parameters)
-b. **Feature weight**: dictionary argument we can give for each umerical features to configure its difficulty to change the feature value
-c. **features_to_vary** list: some features cannot be varied
+- b. **Feature weight**: dictionary argument we can give for each umerical features to configure its difficulty to change the feature value
+- c. **features_to_vary** list: some features cannot be varied
