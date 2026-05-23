@@ -9,12 +9,6 @@
 3. Cleans and preprocesses the features
 4. Saves the train/val/test splits ready for modelling
 
-### How to run it
-
-Click the **Open in Colab** badge above — no installation needed.
-
-Once open in Colab, go to **Runtime → Run all** to execute all cells in order.
-
 ### Output
 
 The notebook saves the following files to your Google Drive (`HR_Attrition_Project/preprocessed/`):
