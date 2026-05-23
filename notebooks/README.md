@@ -11,7 +11,7 @@
 
 ### Output
 
-The notebook saves the following files to your Google Drive (`HR_Attrition_Project/preprocessed/`):
+The notebook saves the following files to your Google Drive (`Current_Trends_in_AI/preprocessed/`):
 
 | File | Description |
 |---|---|
