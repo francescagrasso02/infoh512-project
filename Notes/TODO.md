@@ -10,8 +10,8 @@
 
 ## 📊 Data
 - [x] Download IBM HR Attrition dataset from Kaggle
-- [ ] Exploratory data analysis (class distribution, gender/age distribution)
-- [ ] Data preprocessing (encoding, normalization, train/test split)
+- [x] Exploratory data analysis (class distribution, gender/age distribution)
+- [x] Data preprocessing (encoding, normalization, train/test split)
 
 ## 🤖 Models
 - [ ] Decide which models to use (at least 2)
