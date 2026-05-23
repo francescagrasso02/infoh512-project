@@ -13,7 +13,7 @@ Dataset → ML Model → DiCE → Fairness Analysis (FACTS) → Results
 | Project Phase | Responsible | Tasks |
 |---------------|-------------|--------|
 | Literature Review & Paper Collection |  | Collect and organize papers, summarize key concepts, investigate useful resources |
-| Data Preprocessing & EDA |  | Load dataset, clean data, encode categorical features, perform basic EDA, prepare train/test data |
+| Data Preprocessing & EDA | Francesca  | Load dataset, clean data, encode categorical features, perform basic EDA, prepare train/test data |
 | ML Models |  | Implement Random Forest and XGBoost models, train and evaluate them |
 | DiCE Methodology |  | Study DiCE library, test implementation, generate counterfactual explanations |
 | Fairness / FACTS Analysis |  | Analyze whether suggested counterfactual actions differ across demographic groups |
