@@ -2,8 +2,6 @@
 
 ## 01 — Data Preprocessing
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/francescagrasso02/infoh512-project/blob/main/notebooks/01_preprocessing.ipynb)
-
 ### What this notebook does
 
 1. Loads the HR Attrition dataset directly from GitHub
