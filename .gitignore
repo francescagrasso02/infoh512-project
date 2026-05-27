@@ -4,3 +4,5 @@ Notes/.obsidian
 Notes/.smart-env
 
 
+# Ignore data
+data/processed
