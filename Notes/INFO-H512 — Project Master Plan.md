@@ -76,12 +76,14 @@ Goal: everyone has enough context to implement their part.
 
 **Decision needed first:**
 
-- [ ] Confirm model selection → **Random Forest + XGBoost** (as discussed in workflow)
+- [ ] Confirm model selection → 
+	- [ ] **Random Forest** #kamila
+	- [ ] XGBoost** (as discussed in workflow)
 - [ ] Decide evaluation metrics → accuracy + F1 (imbalanced classes → use F1 macro or weighted)
 
 **Tasks:**
 
-- [ ] Train Random Forest on preprocessed data
+- [x] Train Random Forest on preprocessed data ✅ 2026-05-28
 - [ ] Train XGBoost on preprocessed data
 - [ ] Evaluate both (accuracy, F1, confusion matrix)
 - [ ] Export trained models as `.pkl` or equivalent (needed by DiCE)
