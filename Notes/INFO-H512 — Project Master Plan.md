@@ -72,22 +72,22 @@ Goal: everyone has enough context to implement their part.
 
 ---
 
-### 🤖 Phase 2 — ML Models (Francesca) — **NEXT STEP**
+### 🤖 Phase 2 — ML Models (Francesca) — #kamila 
 
 **Decision needed first:**
 
-- [ ] Confirm model selection → 
-	- [ ] **Random Forest** #kamila
-	- [ ] XGBoost** (as discussed in workflow)
-- [ ] Decide evaluation metrics → accuracy + F1 (imbalanced classes → use F1 macro or weighted)
+- [x] Confirm model selection → ✅ 2026-05-28
+	- [x] **Random Forest** #kamila ✅ 2026-05-28
+	- [x] XGBoost** (as discussed in workflow) #kamila ✅ 2026-05-28
+- [x] Decide evaluation metrics → accuracy + F1 (imbalanced classes → use F1 macro or weighted) ✅ 2026-05-28
 
 **Tasks:**
 
 - [x] Train Random Forest on preprocessed data ✅ 2026-05-28
-- [ ] Train XGBoost on preprocessed data
-- [ ] Evaluate both (accuracy, F1, confusion matrix)
-- [ ] Export trained models as `.pkl` or equivalent (needed by DiCE)
-- [ ] Document which preprocessing pipeline is baked in (important for DiCE compatibility)
+- [x] Train XGBoost on preprocessed data ✅ 2026-05-28
+- [x] Evaluate both (accuracy, F1, confusion matrix) ✅ 2026-05-28
+- [x] Export trained models as `.pkl` or equivalent (needed by DiCE) ✅ 2026-05-28
+- [x] Document which preprocessing pipeline is baked in (important for DiCE compatibility) ✅ 2026-05-28
 
 **Key constraint:** DiCE needs the model wrapped in its API. Check DiCE docs for how to wrap sklearn/XGBoost models.
 

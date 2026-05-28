@@ -8,3 +8,13 @@ Model prediction with counterfactual explanations provides like *"what if?"* hyp
 - *Model agnostic*: not model specific, therefore it can generalize to any kind of ML algos
 
 
+
+```cardlink
+url: https://github.com/interpretml/DiCE/blob/main/docs/source/notebooks/DiCE_getting_started.ipynb
+title: "DiCE/docs/source/notebooks/DiCE_getting_started.ipynb at main · interpretml/DiCE"
+description: "Generate Diverse Counterfactual Explanations for any machine learning model.  - interpretml/DiCE"
+host: github.com
+favicon: https://github.githubassets.com/favicons/favicon.svg
+image: https://opengraph.githubassets.com/02bcf9980e193a3af1f0b4093d32e1aaf74e7d516b581b69559e772c25087970/interpretml/DiCE
+```
+

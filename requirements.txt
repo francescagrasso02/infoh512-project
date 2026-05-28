@@ -1,0 +1,14 @@
+# Core data
+numpy
+pandas
+
+# ML
+scikit-learn
+xgboost
+
+# Explainability
+dice-ml
+
+# Visualization
+matplotlib
+seaborn
