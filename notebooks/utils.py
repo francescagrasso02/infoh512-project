@@ -16,11 +16,85 @@ Author of the new code: Matteo (fairness / FACTS analysis)
 import os
 import pickle
 import warnings
+from concurrent.futures import ProcessPoolExecutor, as_completed
 
 import numpy as np
 import pandas as pd
 
 warnings.filterwarnings("ignore")
+
+# ──────────────────────────────────────────────────────────────────────────────
+# PARALLEL WORKER STATE
+# These must be module-level so worker processes (spawned on Windows) can
+# import them from utils.py without touching __main__ (the notebook).
+# ──────────────────────────────────────────────────────────────────────────────
+_worker_state = {}
+
+
+def _init_worker(wrapper, dice_df, feature_names, method):
+    """Called once per worker process — builds the DiCE explainer in-process."""
+    import dice_ml
+    global _worker_state
+    dice_data = dice_ml.Data(
+        dataframe=dice_df,
+        continuous_features=list(feature_names),
+        outcome_name="Attrition",
+    )
+    dice_model = dice_ml.Model(model=wrapper, backend="sklearn", model_type="classifier")
+    _worker_state["explainer"] = dice_ml.Dice(dice_data, dice_model, method=method)
+
+
+def _process_one_employee(task):
+    """Worker function: generate counterfactuals for one at-risk employee."""
+    (idx, q_enc_list, proba_val, salary_now, feats_to_vary, permitted,
+     n_cf, seed, feature_names, feat_range_list, raw_row_dict) = task
+
+    exp = _worker_state["explainer"]
+
+    feat_range = pd.Series(feat_range_list, index=feature_names)
+    q_enc = pd.DataFrame([q_enc_list], columns=feature_names)
+    q_row = q_enc.iloc[0]
+
+    cf_df = None
+    try:
+        cf = exp.generate_counterfactuals(
+            q_enc,
+            total_CFs=n_cf,
+            desired_class=0,
+            features_to_vary=feats_to_vary,
+            permitted_range=permitted,
+            random_seed=seed,
+            verbose=False,
+        )
+        cf_df = cf.cf_examples_list[0].final_cfs_df
+    except Exception:
+        pass
+
+    n_found = 0 if cf_df is None else len(cf_df)
+    recourse_found = n_found > 0
+    l1 = mean_l1(q_row, cf_df, feature_names, feat_range) if recourse_found else float("nan")
+
+    feat_changes = {}
+    if recourse_found:
+        assert cf_df is not None
+        for _, cf_row in cf_df.iterrows():
+            for f in changed_features(q_row, cf_row, feature_names):
+                feat_changes[f] = feat_changes.get(f, 0) + 1
+
+    return {
+        "emp_id":         int(idx),
+        "Gender":         raw_row_dict["Gender"],
+        "AgeGroup":       raw_row_dict["AgeGroup"],
+        "Age":            int(raw_row_dict["Age"]),
+        "MaritalStatus":  raw_row_dict["MaritalStatus"],
+        "Department":     raw_row_dict["Department"],
+        "true_attrition": int(raw_row_dict["true_attrition"]),
+        "predicted_risk": round(float(proba_val) * 100, 1),
+        "n_cf_found":     n_found,
+        "recourse_found": recourse_found,
+        "L1_cost":        round(l1, 4) if recourse_found else np.nan,
+        "changed_feats":  ";".join(sorted(feat_changes.keys())),
+    }
 
 # ──────────────────────────────────────────────────────────────────────────────
 # CONSTANTS  (copied from the team's DiCE notebook — single source of truth)
@@ -273,22 +347,22 @@ def build_recourse_dataset(
     explainer, wrapper, df_encoded, df_raw, feature_names,
     le_dict, n_cf=3, seed=SEED_DICE, threshold=0.20,
     checkpoint_path=None, verbose=True,
+    dice_df=None, n_jobs=1, dice_method="random",
+    max_salary_increase=None,
 ):
     """
     Runs DiCE on EVERY employee the model predicts as at-risk (proba >= threshold),
     records the recourse outcome, cost, and which features changed, and attaches
     the readable demographics from df_raw.
 
-    This is the key function that enables FACTS analysis on the full population
-    rather than the 3-employee sample in Kamila's DiCE notebook.
+    Pass dice_df (the DataFrame used to build dice_ml.Data) and n_jobs > 1 (or
+    n_jobs=-1 for all CPU cores) to parallelise across employees. Each worker
+    process builds its own DiCE explainer once, then processes many employees.
 
     Output DataFrame columns:
         emp_id, Gender, AgeGroup, Age, MaritalStatus, Department,
         true_attrition, predicted_risk, n_cf_found, recourse_found,
         L1_cost, changed_feats
-
-    Results are checkpointed to CSV every 25 employees so a crash doesn't
-    lose all progress.
     """
     feat_range = (
         df_encoded[feature_names].max() - df_encoded[feature_names].min()
@@ -301,13 +375,71 @@ def build_recourse_dataset(
     if verbose:
         print(f"Employees flagged at-risk (proba >= {threshold}): {len(at_risk_idx)}")
 
+    salary_cap = max_salary_increase if max_salary_increase is not None else MAX_SALARY_INCREASE
+
+    # ── parallel path ────────────────────────────────────────────────────────
+    if n_jobs != 1 and dice_df is not None:
+        max_workers = os.cpu_count() if n_jobs == -1 else n_jobs
+        feat_range_list = feat_range.tolist()
+        feats_to_vary   = [f for f in feature_names if f not in IMMUTABLE]
+
+        tasks = []
+        for idx in at_risk_idx:
+            q_row       = X_all.iloc[idx]
+            salary_now  = float(q_row["MonthlyIncome"])
+            salary_ceil = round(salary_now * (1 + salary_cap))
+            permitted   = {**PERMITTED_RANGE, "MonthlyIncome": [salary_now, salary_ceil]}
+            raw         = df_raw.iloc[idx]
+            raw_dict    = {
+                "Gender":         raw["Gender"],
+                "AgeGroup":       raw["AgeGroup"],
+                "Age":            int(raw["Age"]),
+                "MaritalStatus":  raw["MaritalStatus"],
+                "Department":     raw["Department"],
+                "true_attrition": int(raw["Attrition"]),
+            }
+            tasks.append((
+                int(idx), q_row.tolist(), float(proba[idx]),
+                salary_now, feats_to_vary, permitted,
+                n_cf, seed, list(feature_names), feat_range_list, raw_dict,
+            ))
+
+        records_dict: dict[int, dict] = {}
+        completed = 0
+
+        with ProcessPoolExecutor(
+            max_workers=max_workers,
+            initializer=_init_worker,
+            initargs=(wrapper, dice_df, list(feature_names), dice_method),
+        ) as executor:
+            futures = {executor.submit(_process_one_employee, t): i
+                       for i, t in enumerate(tasks)}
+            for future in as_completed(futures):
+                i = futures[future]
+                records_dict[i] = future.result()
+                completed += 1
+                if verbose and completed % 25 == 0:
+                    print(f"  processed {completed} / {len(tasks)}")
+                if checkpoint_path and completed % 25 == 0:
+                    pd.DataFrame(list(records_dict.values())).to_csv(
+                        checkpoint_path, index=False
+                    )
+
+        result = pd.DataFrame([records_dict[i] for i in range(len(tasks))])
+        if checkpoint_path:
+            result.to_csv(checkpoint_path, index=False)
+            if verbose:
+                print(f"Saved -> {checkpoint_path}")
+        return result
+
+    # ── sequential path (original) ───────────────────────────────────────────
     records = []
     for count, idx in enumerate(at_risk_idx):
         q_enc = X_all.iloc[[idx]].copy()
         q_row = q_enc.iloc[0]
 
         salary_now    = float(q_row["MonthlyIncome"])
-        salary_ceil   = round(salary_now * (1 + MAX_SALARY_INCREASE))
+        salary_ceil   = round(salary_now * (1 + salary_cap))
         permitted     = {**PERMITTED_RANGE, "MonthlyIncome": [salary_now, salary_ceil]}
         feats_to_vary = [f for f in feature_names if f not in IMMUTABLE]
 

@@ -9,7 +9,7 @@ Notes/.smart-env
 **/.DS_Store
 **/__pycache__/
 *.zip
-
+data/
 
 notebooks/diagnostica.py
 notebooks/attivaambiente.md
