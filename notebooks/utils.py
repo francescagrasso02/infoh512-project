@@ -16,6 +16,7 @@ Author of the new code: Matteo (fairness / FACTS analysis)
 import os
 import pickle
 import warnings
+
 import numpy as np
 import pandas as pd
 
@@ -362,4 +363,4 @@ def build_recourse_dataset(
         result.to_csv(checkpoint_path, index=False)
         if verbose:
             print(f"Saved -> {checkpoint_path}")
-    return resul
+    return result

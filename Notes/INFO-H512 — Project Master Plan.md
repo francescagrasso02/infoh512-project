@@ -107,10 +107,10 @@ Goal: everyone has enough context to implement their part.
 
 **Tasks:**
 
-- [ ] Install DiCE: `pip install dice-ml`
-- [ ] Wrap trained models in DiCE's `Model` class
-- [ ] Define `Data` object with feature types and immutable features
-- [ ] Generate counterfactuals for all `Attrition=1` employees (test on subset first)
+- [x] Install DiCE: `pip install dice-ml` ✅ 2026-05-28
+- [x] Wrap trained models in DiCE's `Model` class ✅ 2026-05-28
+- [x] Define `Data` object with feature types and immutable features ✅ 2026-05-28
+- [x] Generate counterfactuals for all `Attrition=1` employees (test on subset first) ✅ 2026-05-28
 - [ ] Save CF output as structured DataFrame (employee ID + original features + CF features)
 - [ ] Validate output quality (proximity, sparsity, validity)
 - [ ] Run for **both** ML models (RF and XGBoost)
