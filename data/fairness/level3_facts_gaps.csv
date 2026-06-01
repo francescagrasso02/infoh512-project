@@ -1,0 +1,7 @@
+model,attribute,EqualEffectiveness,CostOfEffectiveness,EffectivenessWithinBudget,ChoiceForRecourse
+Random Forest,Gender,0.0,0.052,0.07,0.0
+Random Forest,AgeGroup,0.0,0.017,0.029,0.0
+Random Forest,MaritalStatus,0.0,0.125,0.195,0.0
+XGBoost,Gender,0.004,0.043,0.005,0.02
+XGBoost,AgeGroup,0.013,0.021,0.043,0.01
+XGBoost,MaritalStatus,0.017,0.159,0.242,0.02

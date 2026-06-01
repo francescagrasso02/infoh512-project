@@ -1,0 +1,3 @@
+model,gender_flip_rate,age_flip_rate
+Random Forest,0.007,0.068
+XGBoost,0.005,0.049

@@ -1,0 +1,228 @@
+emp_id,Gender,AgeGroup,Age,MaritalStatus,Department,true_attrition,predicted_risk,n_cf_found,recourse_found,L1_cost,changed_feats
+0,Female,Senior,41,Single,Sales,1,99.3,3,True,0.5444,JobRole;RelationshipSatisfaction;StockOptionLevel
+2,Male,Senior,37,Single,Research & Development,1,84.4,3,True,0.5464,MonthlyIncome;OverTime
+14,Male,Young,28,Single,Research & Development,1,99.9,3,True,0.6778,EnvironmentSatisfaction;OverTime
+23,Male,Young,21,Single,Research & Development,0,56.6,3,True,1.3083,BusinessTravel;DistanceFromHome;EnvironmentSatisfaction;JobSatisfaction;StockOptionLevel
+26,Female,Young,32,Single,Research & Development,1,99.8,3,True,0.8889,RelationshipSatisfaction;StockOptionLevel
+33,Male,Senior,39,Married,Sales,1,98.6,3,True,0.7944,JobRole;MonthlyIncome;StockOptionLevel;WorkLifeBalance
+34,Male,Young,24,Married,Research & Development,1,99.5,3,True,0.6417,DistanceFromHome;MonthlyIncome;OverTime;RelationshipSatisfaction
+41,Female,Young,27,Divorced,Research & Development,0,55.1,3,True,0.692,BusinessTravel;JobRole;MonthlyIncome
+42,Male,Young,26,Single,Research & Development,1,99.7,3,True,2.3858,EnvironmentSatisfaction;JobInvolvement;JobSatisfaction;MonthlyIncome;RelationshipSatisfaction;StockOptionLevel;TrainingTimesLastYear
+50,Male,Senior,48,Single,Research & Development,1,99.5,3,True,1.0722,EnvironmentSatisfaction;TrainingTimesLastYear
+51,Male,Young,28,Single,Research & Development,1,99.4,3,True,0.8772,JobInvolvement;JobLevel;MonthlyIncome;StockOptionLevel
+63,Female,Senior,59,Single,Sales,0,31.2,3,True,0.9625,EnvironmentSatisfaction;JobRole;JobSatisfaction;OverTime;RelationshipSatisfaction
+89,Male,Senior,46,Single,Sales,1,98.7,3,True,0.5597,JobRole;StockOptionLevel
+100,Male,Senior,37,Divorced,Human Resources,1,99.3,3,True,0.973,BusinessTravel;MonthlyIncome;OverTime;RelationshipSatisfaction
+102,Female,Young,20,Single,Research & Development,1,95.0,3,True,0.7986,JobInvolvement;JobLevel;JobRole;StockOptionLevel
+107,Male,Young,25,Single,Sales,1,99.2,3,True,0.9103,EnvironmentSatisfaction;MonthlyIncome;OverTime;StockOptionLevel;TrainingTimesLastYear
+109,Female,Young,22,Single,Research & Development,0,56.0,3,True,0.7528,JobRole;OverTime;WorkLifeBalance
+111,Male,Young,34,Single,Research & Development,1,99.3,3,True,0.7667,EnvironmentSatisfaction;OverTime;TrainingTimesLastYear
+124,Male,Young,31,Married,Sales,1,99.6,3,True,0.9738,MonthlyIncome;RelationshipSatisfaction;StockOptionLevel;WorkLifeBalance
+127,Male,Young,19,Single,Sales,1,100.0,3,True,1.1736,BusinessTravel;JobRole;OverTime;StockOptionLevel;TrainingTimesLastYear
+132,Female,Young,31,Married,Sales,1,48.8,3,True,0.9778,DistanceFromHome;JobRole;JobSatisfaction;MonthlyIncome;OverTime
+140,Female,Young,32,Single,Research & Development,1,99.7,3,True,1.9786,EnvironmentSatisfaction;JobInvolvement;JobRole;JobSatisfaction;MonthlyIncome;RelationshipSatisfaction;StockOptionLevel
+153,Male,Senior,45,Divorced,Research & Development,0,21.6,3,True,0.7583,BusinessTravel;DistanceFromHome;JobInvolvement;TrainingTimesLastYear
+171,Female,Young,19,Single,Sales,1,99.7,3,True,0.8332,JobLevel;MonthlyIncome;StockOptionLevel;WorkLifeBalance
+177,Male,Young,19,Single,Research & Development,1,99.4,3,True,2.4806,JobInvolvement;JobLevel;JobRole;OverTime;RelationshipSatisfaction;StockOptionLevel;WorkLifeBalance
+192,Male,Senior,35,Married,Research & Development,1,99.3,3,True,0.9611,BusinessTravel;JobInvolvement;OverTime
+204,Male,Senior,38,Married,Research & Development,1,99.4,3,True,1.3319,JobRole;JobSatisfaction;OverTime;StockOptionLevel
+205,Female,Young,29,Married,Sales,1,98.3,3,True,1.1083,BusinessTravel;DistanceFromHome;JobLevel;StockOptionLevel
+210,Male,Young,32,Married,Sales,1,99.2,3,True,0.7458,JobRole;StockOptionLevel
+216,Female,Young,30,Single,Sales,1,99.9,3,True,0.7153,JobRole;StockOptionLevel
+229,Male,Young,29,Single,Research & Development,1,62.1,3,True,0.9111,EnvironmentSatisfaction;OverTime;StockOptionLevel;WorkLifeBalance
+234,Male,Young,33,Married,Research & Development,1,99.7,3,True,0.6024,JobRole;MonthlyIncome;WorkLifeBalance
+236,Female,Young,33,Married,Research & Development,1,99.0,3,True,1.4667,EnvironmentSatisfaction;RelationshipSatisfaction;StockOptionLevel
+264,Male,Young,28,Single,Research & Development,1,99.3,3,True,1.5583,EnvironmentSatisfaction;JobRole;StockOptionLevel;WorkLifeBalance
+271,Male,Senior,47,Married,Research & Development,1,99.0,3,True,0.7389,BusinessTravel;JobSatisfaction;OverTime
+286,Male,Senior,44,Divorced,Research & Development,1,98.9,3,True,0.8472,JobLevel;JobRole;TrainingTimesLastYear
+288,Male,Young,26,Divorced,Research & Development,1,99.4,3,True,0.4599,MonthlyIncome;OverTime
+293,Male,Young,26,Single,Sales,1,30.6,3,True,0.6548,MonthlyIncome;StockOptionLevel;TrainingTimesLastYear
+296,Male,Young,18,Single,Research & Development,1,99.8,3,True,1.8345,JobLevel;JobRole;MonthlyIncome;OverTime;StockOptionLevel;TrainingTimesLastYear
+301,Female,Young,18,Single,Sales,0,97.1,3,True,3.0046,EnvironmentSatisfaction;JobInvolvement;JobRole;MonthlyIncome;OverTime;RelationshipSatisfaction;StockOptionLevel;TrainingTimesLastYear
+310,Male,Young,31,Married,Human Resources,0,74.3,3,True,0.5497,EnvironmentSatisfaction;JobRole;MonthlyIncome;StockOptionLevel
+317,Male,Senior,52,Married,Research & Development,1,99.0,3,True,1.3792,JobInvolvement;JobRole;OverTime;RelationshipSatisfaction;StockOptionLevel
+318,Female,Young,27,Single,Research & Development,0,51.9,3,True,0.5732,BusinessTravel;DistanceFromHome;MonthlyIncome
+323,Male,Young,28,Married,Research & Development,1,99.4,3,True,1.0889,JobInvolvement;JobSatisfaction;StockOptionLevel;WorkLifeBalance
+327,Female,Senior,39,Married,Sales,1,99.0,3,True,0.5986,JobRole;StockOptionLevel;TrainingTimesLastYear
+336,Male,Young,29,Married,Research & Development,1,99.8,3,True,0.6385,JobLevel;MonthlyIncome;OverTime
+357,Female,Young,21,Single,Sales,1,93.4,3,True,0.6279,EnvironmentSatisfaction;MonthlyIncome;OverTime;RelationshipSatisfaction
+363,Female,Young,33,Single,Sales,1,99.6,3,True,0.7194,JobRole;StockOptionLevel
+366,Male,Senior,41,Single,Sales,1,99.0,3,True,0.6583,JobRole;StockOptionLevel;TrainingTimesLastYear
+368,Male,Senior,40,Married,Sales,1,99.2,3,True,0.7188,MonthlyIncome;OverTime;RelationshipSatisfaction
+370,Female,Young,21,Single,Sales,1,99.7,3,True,0.5666,JobRole;MonthlyIncome;StockOptionLevel
+378,Male,Young,34,Single,Sales,1,99.7,3,True,1.3547,BusinessTravel;EnvironmentSatisfaction;MonthlyIncome;StockOptionLevel
+385,Male,Young,30,Single,Research & Development,1,99.7,3,True,0.2683,MonthlyIncome;RelationshipSatisfaction;TrainingTimesLastYear
+405,Male,Young,25,Married,Research & Development,1,99.0,3,True,1.1926,EnvironmentSatisfaction;JobInvolvement;JobRole;MonthlyIncome
+414,Female,Young,24,Single,Sales,1,99.5,3,True,1.0625,JobRole;OverTime;WorkLifeBalance
+415,Female,Young,34,Divorced,Sales,1,98.9,3,True,0.0975,MonthlyIncome
+416,Male,Senior,38,Married,Research & Development,0,89.3,3,True,0.5542,JobRole;OverTime;StockOptionLevel
+421,Female,Young,29,Married,Research & Development,1,99.0,3,True,0.9444,JobSatisfaction;StockOptionLevel;WorkLifeBalance
+422,Male,Young,19,Single,Human Resources,1,99.3,3,True,0.8569,EnvironmentSatisfaction;JobRole;MonthlyIncome;StockOptionLevel
+435,Male,Young,33,Married,Research & Development,1,99.3,3,True,0.6736,BusinessTravel;JobRole;OverTime
+436,Male,Young,33,Divorced,Research & Development,1,99.0,3,True,1.9306,EnvironmentSatisfaction;JobInvolvement;JobRole;RelationshipSatisfaction
+439,Male,Young,31,Married,Research & Development,1,99.4,3,True,1.3668,EnvironmentSatisfaction;JobRole;JobSatisfaction;MonthlyIncome;RelationshipSatisfaction;TrainingTimesLastYear
+440,Female,Young,34,Divorced,Human Resources,1,99.0,3,True,1.0458,EnvironmentSatisfaction;JobRole;OverTime;StockOptionLevel
+453,Female,Young,26,Divorced,Human Resources,1,99.6,3,True,0.9548,DistanceFromHome;OverTime
+457,Male,Young,18,Single,Sales,1,99.9,3,True,0.7583,JobRole;OverTime
+463,Male,Young,26,Single,Research & Development,1,100.0,3,True,0.7998,JobRole;MonthlyIncome;StockOptionLevel;WorkLifeBalance
+469,Male,Young,32,Married,Sales,1,99.1,3,True,0.5495,BusinessTravel;JobRole;MonthlyIncome
+476,Male,Young,24,Married,Research & Development,0,55.4,3,True,0.2394,DistanceFromHome;JobLevel;MonthlyIncome
+479,Female,Young,24,Married,Research & Development,1,51.0,3,True,0.2244,DistanceFromHome;JobLevel;MonthlyIncome
+480,Male,Young,30,Married,Sales,1,96.9,3,True,0.4062,JobRole;MonthlyIncome
+482,Male,Young,31,Divorced,Sales,1,99.5,3,True,0.7694,JobLevel;JobSatisfaction;StockOptionLevel
+495,Male,Young,27,Divorced,Sales,1,97.6,3,True,0.6069,JobRole
+504,Female,Senior,45,Married,Sales,1,98.8,3,True,0.6998,DistanceFromHome;MonthlyIncome
+513,Male,Young,20,Single,Research & Development,1,98.8,3,True,0.7137,EnvironmentSatisfaction;MonthlyIncome;OverTime;RelationshipSatisfaction
+514,Male,Young,33,Single,Research & Development,1,79.8,3,True,1.002,DistanceFromHome;EnvironmentSatisfaction;OverTime;RelationshipSatisfaction
+525,Female,Young,24,Single,Sales,1,58.5,3,True,0.5528,EnvironmentSatisfaction;JobRole;MonthlyIncome;StockOptionLevel
+528,Male,Senior,50,Married,Sales,1,99.0,3,True,1.0806,JobRole;JobSatisfaction;OverTime;StockOptionLevel
+540,Female,Young,28,Single,Research & Development,1,99.9,3,True,0.5873,MonthlyIncome;OverTime;StockOptionLevel;TrainingTimesLastYear
+543,Male,Senior,44,Single,Research & Development,0,23.5,3,True,0.3986,JobRole;TrainingTimesLastYear;WorkLifeBalance
+554,Female,Young,27,Single,Research & Development,0,49.8,3,True,0.9736,BusinessTravel;JobRole;StockOptionLevel
+568,Male,Senior,55,Married,Research & Development,1,98.3,3,True,0.7583,BusinessTravel;EnvironmentSatisfaction;JobRole;OverTime
+573,Male,Young,26,Single,Sales,1,99.3,3,True,1.0333,JobInvolvement;JobSatisfaction;StockOptionLevel;WorkLifeBalance
+578,Female,Senior,38,Single,Research & Development,0,54.8,3,True,0.6792,EnvironmentSatisfaction;JobRole;TrainingTimesLastYear
+585,Male,Young,23,Married,Research & Development,1,99.6,3,True,1.0488,BusinessTravel;DistanceFromHome;JobRole;OverTime
+589,Female,Young,29,Married,Research & Development,1,100.0,3,True,0.5789,JobRole;MonthlyIncome
+591,Female,Young,33,Single,Sales,1,99.5,3,True,0.8889,EnvironmentSatisfaction;JobRole;JobSatisfaction
+595,Male,Senior,58,Single,Research & Development,1,98.7,3,True,0.9095,DistanceFromHome;JobSatisfaction;OverTime;StockOptionLevel;WorkLifeBalance
+598,Male,Young,28,Single,Research & Development,1,98.8,3,True,1.3696,EnvironmentSatisfaction;MonthlyIncome;OverTime;StockOptionLevel;WorkLifeBalance
+607,Female,Senior,49,Married,Sales,1,98.9,3,True,1.2486,BusinessTravel;JobRole;WorkLifeBalance
+608,Male,Senior,55,Single,Sales,1,99.1,3,True,0.3319,JobLevel;JobRole
+614,Female,Young,26,Married,Research & Development,1,98.9,3,True,0.4401,MonthlyIncome;OverTime;WorkLifeBalance
+636,Female,Senior,35,Divorced,Research & Development,1,25.3,3,True,0.5516,DistanceFromHome;JobLevel;MonthlyIncome;WorkLifeBalance
+645,Female,Young,29,Divorced,Sales,1,42.9,3,True,0.5901,BusinessTravel;JobInvolvement;JobRole;MonthlyIncome;TrainingTimesLastYear
+655,Male,Young,33,Divorced,Human Resources,0,84.4,3,True,0.8222,EnvironmentSatisfaction;OverTime
+656,Male,Young,32,Single,Research & Development,1,95.7,3,True,0.5653,JobRole;StockOptionLevel
+660,Male,Senior,58,Divorced,Research & Development,1,99.9,3,True,0.0878,MonthlyIncome;TrainingTimesLastYear
+662,Female,Young,20,Single,Sales,1,99.0,3,True,1.0444,JobRole;StockOptionLevel;WorkLifeBalance
+666,Female,Young,22,Married,Research & Development,1,98.5,3,True,0.9333,OverTime;RelationshipSatisfaction
+667,Female,Senior,41,Divorced,Research & Development,1,99.3,3,True,0.4923,MonthlyIncome;OverTime
+669,Male,Senior,39,Married,Research & Development,1,99.7,3,True,0.6703,MonthlyIncome;OverTime;StockOptionLevel;TrainingTimesLastYear
+671,Male,Young,34,Divorced,Research & Development,0,52.1,3,True,0.1295,JobSatisfaction;MonthlyIncome
+683,Male,Young,25,Married,Sales,1,100.0,3,True,0.616,MonthlyIncome;OverTime
+684,Male,Senior,40,Divorced,Sales,0,59.5,3,True,0.64,EnvironmentSatisfaction;JobRole;MonthlyIncome
+688,Male,Young,19,Single,Sales,1,100.0,3,True,1.9074,DistanceFromHome;JobInvolvement;JobRole;JobSatisfaction;MonthlyIncome;RelationshipSatisfaction;StockOptionLevel
+689,Male,Young,20,Single,Research & Development,1,87.7,3,True,0.6319,JobRole;JobSatisfaction;RelationshipSatisfaction;StockOptionLevel
+693,Male,Senior,36,Married,Sales,1,99.0,3,True,0.8444,JobSatisfaction;OverTime;RelationshipSatisfaction
+695,Male,Senior,37,Married,Sales,1,99.5,3,True,0.6167,JobRole
+706,Female,Senior,40,Single,Sales,1,99.5,3,True,0.7964,DistanceFromHome;JobLevel;StockOptionLevel
+709,Male,Young,31,Single,Research & Development,1,97.4,3,True,0.6309,JobInvolvement;MonthlyIncome;RelationshipSatisfaction
+711,Female,Young,29,Single,Research & Development,1,100.0,3,True,0.946,DistanceFromHome;JobSatisfaction;OverTime;StockOptionLevel
+720,Female,Young,30,Married,Research & Development,1,99.9,3,True,0.4216,JobRole;MonthlyIncome;TrainingTimesLastYear
+731,Female,Young,20,Single,Research & Development,1,99.9,3,True,0.717,MonthlyIncome;StockOptionLevel
+742,Male,Senior,50,Married,Research & Development,0,76.0,3,True,0.5793,EnvironmentSatisfaction;MonthlyIncome;TrainingTimesLastYear
+744,Female,Senior,37,Married,Research & Development,1,92.6,3,True,1.206,DistanceFromHome;EnvironmentSatisfaction;StockOptionLevel;TrainingTimesLastYear;WorkLifeBalance
+748,Male,Young,26,Single,Sales,1,99.6,3,True,0.6866,JobInvolvement;MonthlyIncome;StockOptionLevel
+752,Female,Senior,36,Single,Research & Development,1,99.2,3,True,1.2653,JobRole;OverTime;StockOptionLevel;TrainingTimesLastYear
+761,Male,Senior,36,Divorced,Research & Development,1,98.7,3,True,0.9819,EnvironmentSatisfaction;JobRole;MonthlyIncome;RelationshipSatisfaction;StockOptionLevel
+762,Male,Young,26,Married,Research & Development,1,99.6,3,True,1.0698,BusinessTravel;DistanceFromHome;EnvironmentSatisfaction;OverTime
+763,Female,Young,34,Married,Sales,0,89.2,3,True,0.5072,DistanceFromHome;MonthlyIncome;TrainingTimesLastYear
+764,Male,Young,28,Married,Sales,0,81.9,3,True,0.9445,BusinessTravel;DistanceFromHome;EnvironmentSatisfaction;MonthlyIncome;StockOptionLevel
+776,Female,Young,20,Single,Sales,1,99.8,3,True,0.5565,EnvironmentSatisfaction;MonthlyIncome;OverTime
+777,Female,Young,21,Single,Research & Development,1,99.9,1,True,3.1296,JobInvolvement;JobRole;JobSatisfaction;MonthlyIncome;OverTime;RelationshipSatisfaction;WorkLifeBalance
+791,Male,Senior,35,Single,Sales,1,99.3,3,True,0.6806,BusinessTravel;JobRole;StockOptionLevel
+792,Female,Young,33,Single,Research & Development,1,98.8,3,True,1.0221,DistanceFromHome;JobRole;MonthlyIncome;StockOptionLevel
+796,Male,Young,25,Married,Research & Development,1,99.0,3,True,0.9556,EnvironmentSatisfaction;JobSatisfaction;OverTime
+797,Male,Young,26,Divorced,Research & Development,1,99.5,3,True,0.5369,JobRole;MonthlyIncome
+798,Male,Young,33,Single,Research & Development,1,99.9,3,True,0.6198,JobInvolvement;MonthlyIncome;TrainingTimesLastYear
+800,Male,Young,28,Divorced,Research & Development,1,99.1,3,True,0.8136,EnvironmentSatisfaction;MonthlyIncome
+813,Male,Senior,39,Divorced,Research & Development,1,98.6,3,True,0.8389,StockOptionLevel
+828,Male,Young,18,Single,Research & Development,1,99.0,3,True,1.9958,EnvironmentSatisfaction;JobLevel;MonthlyIncome;StockOptionLevel;TrainingTimesLastYear
+829,Female,Young,33,Single,Sales,1,88.8,3,True,0.8542,JobSatisfaction;MonthlyIncome;OverTime;RelationshipSatisfaction
+831,Male,Young,31,Married,Research & Development,1,98.7,3,True,0.821,BusinessTravel;JobInvolvement;JobRole;MonthlyIncome
+836,Female,Young,29,Married,Sales,1,99.1,3,True,1.5466,BusinessTravel;DistanceFromHome;JobInvolvement;JobRole;WorkLifeBalance
+838,Male,Senior,42,Single,Sales,1,99.3,3,True,0.9722,BusinessTravel;JobRole;OverTime;StockOptionLevel
+842,Female,Young,28,Married,Research & Development,1,99.8,3,True,0.5966,JobRole;MonthlyIncome
+849,Female,Senior,43,Single,Sales,1,99.2,3,True,1.2444,EnvironmentSatisfaction;JobRole;StockOptionLevel;WorkLifeBalance
+871,Female,Young,24,Married,Research & Development,1,99.5,3,True,0.63,JobRole;MonthlyIncome
+892,Female,Young,19,Single,Research & Development,1,99.9,3,True,1.1444,OverTime;StockOptionLevel;WorkLifeBalance
+911,Male,Young,25,Single,Sales,1,100.0,3,True,0.8667,BusinessTravel;OverTime
+913,Female,Senior,45,Single,Sales,1,98.9,3,True,1.0,StockOptionLevel;TrainingTimesLastYear
+915,Female,Young,21,Single,Research & Development,1,43.9,3,True,0.3001,BusinessTravel;DistanceFromHome;JobRole;MonthlyIncome;TrainingTimesLastYear
+932,Female,Young,29,Divorced,Research & Development,1,99.3,3,True,0.7914,JobRole;MonthlyIncome;OverTime;RelationshipSatisfaction
+939,Male,Young,32,Married,Research & Development,1,98.0,3,True,0.6083,RelationshipSatisfaction;TrainingTimesLastYear
+940,Male,Senior,39,Single,Research & Development,1,98.5,3,True,0.8431,DistanceFromHome;JobRole;JobSatisfaction;RelationshipSatisfaction;StockOptionLevel
+946,Male,Senior,40,Single,Sales,1,71.5,3,True,0.5373,DistanceFromHome;JobInvolvement;TrainingTimesLastYear
+947,Male,Senior,52,Single,Sales,1,99.7,3,True,0.7958,JobRole;JobSatisfaction;StockOptionLevel
+951,Male,Senior,41,Single,Sales,0,23.1,3,True,0.7403,JobRole;JobSatisfaction;TrainingTimesLastYear;WorkLifeBalance
+952,Female,Young,31,Single,Sales,1,99.8,3,True,0.8231,MonthlyIncome;OverTime;RelationshipSatisfaction
+966,Female,Senior,58,Married,Research & Development,1,98.9,3,True,1.4,RelationshipSatisfaction;StockOptionLevel;TrainingTimesLastYear
+972,Female,Young,18,Single,Research & Development,0,44.8,3,True,0.1393,JobRole;MonthlyIncome
+975,Male,Senior,55,Single,Sales,1,99.6,3,True,0.5458,JobRole;StockOptionLevel
+980,Female,Young,31,Single,Sales,1,99.2,3,True,0.7681,JobInvolvement;JobRole;StockOptionLevel
+990,Male,Young,33,Married,Sales,0,26.3,3,True,0.5556,BusinessTravel;JobInvolvement;RelationshipSatisfaction;StockOptionLevel;TrainingTimesLastYear
+997,Female,Young,27,Single,Research & Development,1,99.7,3,True,0.8426,BusinessTravel;DistanceFromHome;MonthlyIncome;OverTime
+1006,Male,Senior,49,Single,Research & Development,1,99.2,3,True,0.7574,MonthlyIncome;RelationshipSatisfaction;StockOptionLevel
+1007,Female,Young,29,Single,Research & Development,1,99.2,3,True,0.8333,JobInvolvement;OverTime;RelationshipSatisfaction;StockOptionLevel
+1012,Female,Young,31,Single,Sales,1,100.0,3,True,3.153,BusinessTravel;EnvironmentSatisfaction;JobInvolvement;JobRole;MonthlyIncome;OverTime;RelationshipSatisfaction;StockOptionLevel;TrainingTimesLastYear
+1016,Female,Young,31,Single,Research & Development,1,99.7,0,False,,
+1028,Male,Senior,41,Married,Research & Development,0,43.8,3,True,0.544,DistanceFromHome;JobRole;JobSatisfaction;MonthlyIncome;RelationshipSatisfaction
+1031,Male,Senior,46,Divorced,Sales,1,99.2,3,True,0.6728,BusinessTravel;JobRole;MonthlyIncome
+1032,Female,Senior,39,Single,Research & Development,1,99.8,3,True,0.6556,JobRole;OverTime
+1033,Female,Young,31,Single,Research & Development,1,98.9,3,True,0.7304,DistanceFromHome;RelationshipSatisfaction
+1036,Male,Young,31,Married,Research & Development,1,99.5,3,True,0.8972,EnvironmentSatisfaction;JobRole;OverTime
+1039,Female,Young,34,Married,Human Resources,1,98.8,3,True,0.8382,DistanceFromHome;EnvironmentSatisfaction;JobRole;MonthlyIncome;StockOptionLevel
+1056,Male,Young,28,Married,Sales,1,99.3,3,True,1.0967,JobRole;MonthlyIncome;WorkLifeBalance
+1057,Female,Young,29,Single,Sales,1,99.7,3,True,0.7153,JobRole;StockOptionLevel
+1058,Female,Young,34,Single,Sales,1,99.5,3,True,0.7111,RelationshipSatisfaction;StockOptionLevel;WorkLifeBalance
+1060,Male,Young,24,Single,Research & Development,1,99.9,3,True,1.3972,JobLevel;JobRole;StockOptionLevel
+1061,Female,Young,24,Married,Sales,0,20.3,3,True,0.1907,JobInvolvement;MonthlyIncome
+1068,Male,Young,28,Single,Research & Development,1,99.6,3,True,0.4168,MonthlyIncome;StockOptionLevel;WorkLifeBalance
+1077,Male,Young,29,Single,Research & Development,1,99.3,3,True,1.2589,MonthlyIncome;StockOptionLevel;WorkLifeBalance
+1083,Male,Senior,40,Single,Research & Development,1,99.5,3,True,1.5941,JobRole;JobSatisfaction;MonthlyIncome;TrainingTimesLastYear;WorkLifeBalance
+1085,Female,Young,31,Single,Research & Development,1,99.2,3,True,0.9873,MonthlyIncome;RelationshipSatisfaction;StockOptionLevel
+1110,Female,Senior,35,Divorced,Research & Development,1,99.6,3,True,0.8061,EnvironmentSatisfaction;MonthlyIncome
+1112,Male,Senior,38,Married,Research & Development,1,98.7,3,True,0.9147,DistanceFromHome;RelationshipSatisfaction
+1118,Female,Young,26,Married,Research & Development,0,25.0,3,True,0.6769,JobInvolvement;MonthlyIncome;RelationshipSatisfaction;TrainingTimesLastYear
+1136,Male,Young,28,Married,Research & Development,1,99.8,3,True,0.7005,BusinessTravel;JobRole;MonthlyIncome
+1144,Male,Young,31,Single,Sales,0,66.3,3,True,0.7528,JobInvolvement;JobRole
+1153,Female,Young,18,Single,Sales,1,99.9,3,True,0.8681,JobRole;OverTime;StockOptionLevel
+1162,Male,Senior,35,Married,Sales,1,99.3,3,True,0.6419,DistanceFromHome;JobRole;MonthlyIncome
+1167,Male,Senior,35,Divorced,Sales,1,99.6,3,True,0.8653,EnvironmentSatisfaction;JobInvolvement
+1171,Male,Senior,40,Single,Research & Development,1,99.7,3,True,0.8222,JobSatisfaction;OverTime;RelationshipSatisfaction;StockOptionLevel
+1186,Male,Senior,35,Single,Sales,1,50.3,3,True,0.272,DistanceFromHome;JobRole;RelationshipSatisfaction;TrainingTimesLastYear
+1201,Male,Young,23,Single,Research & Development,1,99.4,3,True,0.9056,JobRole;OverTime;TrainingTimesLastYear
+1205,Male,Young,32,Single,Research & Development,1,99.7,3,True,1.8168,JobRole;JobSatisfaction;MonthlyIncome;OverTime;RelationshipSatisfaction;StockOptionLevel;TrainingTimesLastYear
+1213,Male,Young,23,Divorced,Sales,1,78.2,3,True,0.2276,MonthlyIncome;OverTime
+1222,Male,Young,24,Married,Human Resources,1,99.4,3,True,2.3238,BusinessTravel;DistanceFromHome;JobSatisfaction;WorkLifeBalance
+1223,Male,Senior,47,Married,Sales,1,99.3,3,True,0.8389,BusinessTravel;JobRole;StockOptionLevel
+1226,Male,Young,32,Married,Research & Development,0,34.2,3,True,0.3332,DistanceFromHome;MonthlyIncome
+1236,Male,Senior,36,Divorced,Sales,1,26.1,3,True,0.7657,DistanceFromHome;JobRole;JobSatisfaction
+1237,Male,Young,32,Single,Sales,1,99.3,3,True,0.8208,EnvironmentSatisfaction;JobRole;StockOptionLevel
+1246,Female,Young,30,Divorced,Human Resources,1,99.4,3,True,0.6159,JobRole;MonthlyIncome
+1249,Female,Young,29,Single,Sales,1,99.4,3,True,0.8758,JobInvolvement;JobRole;MonthlyIncome;StockOptionLevel
+1255,Female,Young,33,Single,Sales,1,99.9,3,True,1.1736,EnvironmentSatisfaction;JobRole;StockOptionLevel
+1257,Male,Young,31,Married,Sales,1,99.2,3,True,1.2458,EnvironmentSatisfaction;JobRole;StockOptionLevel;TrainingTimesLastYear
+1262,Male,Senior,43,Married,Research & Development,1,99.7,3,True,0.2351,JobLevel;MonthlyIncome
+1271,Male,Young,21,Single,Sales,1,98.9,3,True,0.5906,JobRole;MonthlyIncome;StockOptionLevel
+1273,Female,Young,22,Married,Research & Development,1,99.5,3,True,0.5451,MonthlyIncome;OverTime;StockOptionLevel;TrainingTimesLastYear
+1279,Male,Senior,44,Divorced,Research & Development,1,98.5,3,True,0.3616,MonthlyIncome;OverTime
+1291,Male,Senior,37,Single,Research & Development,1,98.7,3,True,1.1736,JobRole;JobSatisfaction;RelationshipSatisfaction;StockOptionLevel
+1297,Female,Young,26,Married,Human Resources,1,26.9,3,True,0.6389,EnvironmentSatisfaction;JobInvolvement;TrainingTimesLastYear
+1298,Female,Senior,46,Married,Research & Development,1,98.8,3,True,1.1302,BusinessTravel;DistanceFromHome;TrainingTimesLastYear;WorkLifeBalance
+1311,Female,Young,18,Single,Research & Development,0,23.1,3,True,0.42,DistanceFromHome;EnvironmentSatisfaction;MonthlyIncome;TrainingTimesLastYear
+1312,Male,Young,31,Married,Human Resources,1,99.2,3,True,0.6778,StockOptionLevel;TrainingTimesLastYear
+1313,Male,Young,29,Divorced,Human Resources,1,100.0,3,True,0.6627,EnvironmentSatisfaction;JobRole;MonthlyIncome
+1317,Female,Young,27,Single,Research & Development,0,58.3,3,True,0.2891,JobSatisfaction;MonthlyIncome;StockOptionLevel
+1319,Male,Young,32,Single,Sales,0,68.6,3,True,0.4675,DistanceFromHome;JobLevel;JobRole;MonthlyIncome;StockOptionLevel
+1326,Male,Young,32,Single,Sales,1,99.9,3,True,1.1147,DistanceFromHome;StockOptionLevel
+1332,Male,Young,29,Single,Research & Development,1,99.9,3,True,0.6642,MonthlyIncome;OverTime;RelationshipSatisfaction
+1333,Female,Senior,46,Married,Sales,1,98.0,3,True,0.8556,BusinessTravel;JobRole;TrainingTimesLastYear
+1338,Male,Young,30,Single,Sales,1,99.6,0,False,,
+1339,Male,Young,22,Single,Research & Development,1,99.8,3,True,0.6325,MonthlyIncome;OverTime;StockOptionLevel
+1353,Male,Young,34,Married,Research & Development,1,99.4,3,True,0.8032,DistanceFromHome;EnvironmentSatisfaction;JobSatisfaction
+1354,Male,Senior,56,Single,Research & Development,1,99.2,3,True,0.7791,EnvironmentSatisfaction;JobRole;MonthlyIncome
+1365,Male,Young,29,Single,Sales,1,99.7,1,True,1.2792,EnvironmentSatisfaction;JobRole;JobSatisfaction
+1369,Female,Young,28,Single,Sales,1,99.5,3,True,1.0056,StockOptionLevel;TrainingTimesLastYear;WorkLifeBalance
+1375,Female,Young,32,Single,Research & Development,1,99.8,3,True,0.5111,OverTime
+1379,Female,Young,27,Married,Human Resources,1,99.3,3,True,0.9208,JobRole;StockOptionLevel
+1390,Male,Young,28,Divorced,Research & Development,1,99.4,3,True,0.4933,JobRole;MonthlyIncome
+1391,Male,Senior,38,Single,Sales,0,78.6,3,True,0.6894,JobLevel;JobRole;MonthlyIncome;StockOptionLevel
+1395,Male,Young,31,Married,Sales,1,99.1,3,True,1.05,OverTime;TrainingTimesLastYear
+1396,Male,Senior,53,Single,Sales,1,99.8,3,True,1.373,DistanceFromHome;OverTime;StockOptionLevel
+1402,Female,Young,31,Divorced,Research & Development,0,95.1,3,True,0.625,EnvironmentSatisfaction;JobLevel;JobRole
+1436,Male,Young,21,Single,Sales,0,98.8,3,True,0.738,BusinessTravel;JobRole;MonthlyIncome;OverTime
+1438,Male,Young,23,Married,Sales,1,99.7,3,True,1.9618,DistanceFromHome;EnvironmentSatisfaction;JobLevel;JobRole;JobSatisfaction;MonthlyIncome;RelationshipSatisfaction
+1452,Male,Senior,50,Divorced,Sales,1,99.0,3,True,0.9976,BusinessTravel;DistanceFromHome;JobRole;StockOptionLevel
+1461,Male,Senior,50,Divorced,Sales,1,99.6,3,True,1.2595,DistanceFromHome;JobRole

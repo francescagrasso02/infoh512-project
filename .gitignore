@@ -5,4 +5,11 @@ Notes/.smart-env
 
 
 # Ignore data
-data/processed
+.DS_Store
+**/.DS_Store
+**/__pycache__/
+*.zip
+
+
+notebooks/diagnostica.py
+notebooks/attivaambiente.md
