@@ -539,7 +539,24 @@ def build_recourse_dataset(
 
     # sequential path ________________________________________________________
     records = []
+    processed_ids = set()
+
+    if checkpoint_path and os.path.exists(checkpoint_path):
+        try: 
+            existing = pd.read_csv(checkpoint_path)
+            if not existing.empty and "emp_id" in existing.columns:
+                records = existing.to_dict("records")
+                processed_ids = set(existing["emp_id"].tolist())
+                if verbose:
+                    print(f"  ✓ Resuming: {len(processed_ids)} employees already processed, "
+                      f"{len(at_risk_idx) - len(processed_ids)} remaining")
+        except Exception as e:
+            if verbose:
+                print(f"  [warn] Failed to read checkpoint: {e}")
+   
     for count, idx in enumerate(at_risk_idx):
+        if int(idx) in processed_ids:
+            continue
         q_enc = X_all.iloc[[idx]].copy()
         q_row = q_enc.iloc[0]
 
