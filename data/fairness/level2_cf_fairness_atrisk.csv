@@ -1,3 +1,0 @@
-model,n_at_risk,gender_flip_rate,age_flip_rate
-Random Forest,281,0.021,0.107
-XGBoost,227,0.013,0.106
