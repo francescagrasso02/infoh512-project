@@ -1,239 +1,293 @@
-# Notebooks
+# INFO-H512 — Counterfactuals & Fairness on the IBM HR Attrition Dataset
 
-## 01 — Data Preprocessing
+**Course:** Current Trends in Artificial Intelligence (INFO-H512) · ULB
+**Dataset:** IBM HR Employee Attrition (1470 employees, binary `Attrition` target)
 
-### What this notebook does
-
-1. Loads the HR Attrition dataset directly from GitHub
-2. Explores the data (shape, types, missing values, class distribution)
-3. Cleans and preprocesses the features
-4. Saves the train/val/test splits ready for modelling
-
-### Output
-
-The notebook saves the following files to your Google Drive (`Current_Trends_in_AI/preprocessed/`):
-
-| File | Description |
-|---|---|
-| `X_train.npy` | Training features (scaled) |
-| `X_val.npy` | Validation features (scaled) |
-| `X_test.npy` | Test features (scaled) |
-| `y_train.npy` | Training labels |
-| `y_val.npy` | Validation labels |
-| `y_test.npy` | Test labels |
-
-> ⚠️ The first cell will ask you to authenticate with Google Drive — this is needed to save the preprocessed files. If you prefer not to connect Drive, the notebook still runs fine and you can download the arrays manually.
-
-# Fairness Analysis — IBM HR Attrition Dataset
-**Author:** Matteo | Course: INFO-H512 — Current Trends in AI | ULB
+This project predicts which employees are likely to leave the company, uses
+**DiCE** to generate counterfactual explanations (personalised "what could you
+change" action plans for at-risk employees), and then asks whether those
+predictions and action plans are **equally fair across different groups of
+employees**.
 
 ---
 
-## What this part of the project does
+## Pipeline overview
 
-The team trained two models (Random Forest and XGBoost) to predict which employees are likely to leave the company, and used DiCE to generate counterfactual explanations — personalised action plans that tell each at-risk employee what they could change to reduce their risk.
+The notebooks run **in order**. Each one depends on the outputs of the previous.
 
-This part of the project asks a different question: **are those predictions and action plans equally fair across different groups of employees?**
+```
+1  →  2.a / 2.b  →  3.a  →  3.b  →  4  →  5
+```
 
-We analyse fairness at three levels, each one deeper than the previous:
+| # | Notebook | What it produces | Author |
+|---|----------|------------------|--------|
+| 1 | `1_Preprocessing.ipynb` | Cleaned, scaled train/val/test splits + DiCE feature taxonomy | Team |
+| 2.a | `2_a__Random_Forest.ipynb` | Trained Random Forest + saved artifacts | Kamila |
+| 2.b | `2_b__XGboost.ipynb` | Trained XGBoost + saved artifacts | Kamila |
+| 3.a | `3_a__Recourse & Prediction Fairness.ipynb` | Recourse dataset (DiCE on all at-risk employees) + **Level 1** fairness | Matteo |
+| 3.b | `3_b__Sensitivity_analysis.ipynb` | Recourse datasets under three salary-cap configs | Matteo |
+| 4 | `4__Counterfactual_Fairness.ipynb` | **Level 2** individual counterfactual fairness | Matteo |
+| 5 | `5__FACTS.ipynb` | **Level 3** FACTS recourse fairness + final synthesis | Matteo |
+
+> **Note on numbering.** Earlier drafts of the fairness notebooks were numbered
+> `04 → 04b → 05 → 06`. They have been renumbered to `3.a → 3.b → 4 → 5` so the
+> whole project reads as a single end-to-end sequence. If you find a stray
+> reference to "notebook 04/05/06" inside a notebook cell, it maps as:
+> `04 → 3.a`, `04b → 3.b`, `05 → 4`, `06 → 5`.
+
+---
+
+## The three levels of fairness
+
+Each level asks a deeper question than the one before it.
 
 | Level | Question | Notebook |
 |-------|----------|----------|
-| 1 | Does the model predict attrition at the same rate for all groups? | `04` |
-| 2 | Would the model change its mind if an employee's protected attribute were different? | `05` |
-| 3 | Is the recourse — the set of changes DiCE recommends — equally achievable for all groups? | `06` |
+| 1 — Prediction | Does the model flag attrition at the same rate for all groups? | `3.a` |
+| 2 — Counterfactual | Would the model change its mind if a protected attribute were different? | `4` |
+| 3 — Recourse (FACTS) | Is the recourse DiCE recommends equally achievable for all groups? | `5` |
+
+Protected attributes analysed: **Gender**, **AgeGroup** (Young < 35 ≤ Senior),
+and **MaritalStatus**.
 
 ---
 
-## Files
+## Repository layout
 
 ```
-notebooks/
-├── utils.py                              ← shared functions used by all notebooks
-├── 04_recourse_and_prediction_fairness.ipynb
-├── 04b_sensitivity_analysis.ipynb
-├── 05_counterfactual_fairness.ipynb
-└── 06_FACTS.ipynb
-
-data/fairness/                            ← all outputs (generated automatically)
-├── recourse_RF.csv                       ← recourse dataset, Random Forest
-├── recourse_XGB.csv                      ← recourse dataset, XGBoost
-├── level1_prediction_fairness.png
-├── level2_cf_fairness_full.csv
-├── level2_cf_fairness_atrisk.csv
-├── level2_counterfactual_fairness.png
-├── level3_facts_gaps.csv
-├── level3_effectiveness.png
-├── level3_cost.png
-├── level3_feature_changes_gender.png
-├── sensitivity_summary.csv
-├── sensitivity_facts_gaps.csv
-└── sensitivity_[tight|moderate|loose]_[RF|XGB].csv
+infoh512-project/
+├── notebooks/
+│   ├── utils.py                                   ← shared functions & constants
+│   ├── 1_Preprocessing.ipynb
+│   ├── 2_a__Random_Forest.ipynb
+│   ├── 2_b__XGboost.ipynb
+│   ├── 3_a__Recourse & Prediction Fairness.ipynb
+│   ├── 3_b__Sensitivity_analysis.ipynb
+│   ├── 4__Counterfactual_Fairness.ipynb
+│   └── 5__FACTS.ipynb
+├── data/
+│   ├── WA_Fn-UseC_-HR-Employee-Attrition.csv      ← raw dataset
+│   ├── processed/                                 ← splits + scaler + encoders (notebook 1)
+│   │   ├── X_train.npy / X_val.npy / X_test.npy
+│   │   ├── y_train.npy / y_val.npy / y_test.npy
+│   │   ├── scaler.pkl
+│   │   ├── feature_names.pkl
+│   │   └── label_encoders.pkl
+│   ├── models/
+│   │   ├── RF/        ← random_forest.pkl + scaler/encoders/feature_names (notebook 2.a)
+│   │   └── XGBoost/   ← xgboost.pkl + scaler/encoders/feature_names (notebook 2.b)
+│   └── fairness/                                  ← all fairness outputs (created automatically)
+│       ├── recourse_RF.csv
+│       ├── recourse_XGB.csv
+│       ├── level1_prediction_fairness.png
+│       ├── level2_cf_fairness_full.csv
+│       ├── level2_cf_fairness_atrisk.csv
+│       ├── level2_counterfactual_fairness.png
+│       ├── level3_facts_gaps.csv
+│       ├── level3_effectiveness.png
+│       ├── level3_cost.png
+│       ├── level3_feature_changes_gender.png
+│       ├── sensitivity_summary.csv
+│       ├── sensitivity_facts_gaps.csv
+│       └── sensitivity_[tight|moderate|loose]_[RF|XGB].csv
+└── requirements.txt
 ```
 
 ---
 
 ## How to run
 
-Run the notebooks **in order**. Each one depends on the outputs of the previous.
+Run the notebooks top to bottom in the order above. The notebooks **auto-detect**
+whether you are on Google Colab or running locally (VSCode) and set their paths
+through `get_project_paths()` in `utils.py` — no manual path editing needed.
 
-```
-04  →  04b  →  05  →  06
-```
+- **Local (VSCode):** open a notebook from inside `notebooks/`; paths resolve
+  relative to the project root.
+- **Google Colab:** Drive is mounted automatically and the shared
+  `Current_Trends_in_AI/` folder is located.
 
-> ⚠️ Notebooks 04 and 04b are the slow ones — DiCE generates counterfactuals
-> for every at-risk employee (~280 people). Expect 10 minutes for 04 and
-> 30 minutes for 04b. Notebooks 05 and 06 run in under a minute.
+> ⚠️ **Notebooks 3.a and 3.b are the slow ones** — DiCE generates counterfactuals
+> for every at-risk employee (~280 people). Expect ~10 min for 3.a and ~30 min
+> for 3.b (it re-runs DiCE three times). Notebooks 4 and 5 run in under a minute.
 
-**Requirements:** all dependencies are in the project `requirements.txt`.
-The notebooks auto-detect whether you are running locally (VSCode) or on
-Google Colab and set the paths accordingly.
-
----
-
-## `utils.py` — shared functions
-
-All shared code lives here so the notebooks stay clean and don't duplicate logic.
-
-| Function | What it does |
-|----------|-------------|
-| `get_project_paths()` | Auto-detects local vs Colab and returns all project paths |
-| `load_artifacts(dir)` | Loads model + scaler + encoders from a model directory |
-| `load_raw_with_split()` | Downloads the CSV and rebuilds the label-encoded dataset |
-| `ScaledModelWrapper` | Wraps a model + scaler so DiCE can work with unscaled data |
-| `build_recourse_dataset()` | Runs DiCE on all at-risk employees and returns a tidy DataFrame |
-| `mean_l1()` | Computes the normalised L1 distance between a query and its CFs |
-| `changed_features()` | Returns which features differ between a query row and a CF |
-
-**Key constants** (copied from the team's DiCE notebook to ensure consistency):
-- `IMMUTABLE` — features DiCE cannot change (Age, Gender, Department, etc.)
-- `PERMITTED_RANGE` — allowed ranges for each mutable feature
-- `PROTECTED_ATTRIBUTES = ["Gender", "AgeGroup", "MaritalStatus"]`
-- `THRESHOLD = 0.20` — probability threshold used by all models
+**Requirements:** all dependencies are listed in `requirements.txt`.
 
 ---
 
-## Notebook 04 — Recourse Dataset + Prediction Fairness
+## `utils.py` — shared code
 
-**What it does:**
-1. Loads the team's RF and XGBoost models
-2. Runs DiCE on **all** employees predicted as at-risk (not just the 3-person sample in the team's DiCE notebook)
-3. Saves a recourse dataset with one row per at-risk employee: whether they found a counterfactual, how much it costs (L1), which features changed
-4. Computes Level 1 fairness: statistical parity, equal opportunity, and predictive equality across Gender, AgeGroup, and MaritalStatus
+All logic shared across notebooks lives here so the notebooks stay clean and
+don't duplicate code.
 
-**Key results:**
-- Random Forest flags 281 at-risk employees (recall 88.2%, precision 74.4%)
-- XGBoost flags 227 (recall 81.9%, precision 85.5%) — more precise, less cautious
-- Both models find recourse for ~99-100% of at-risk employees at the +50% salary cap
-- Prediction fairness gaps are small at group level — this is where the analysis starts
+| Function / class | What it does |
+|------------------|--------------|
+| `get_project_paths()` | Auto-detects local vs Colab and returns the project paths dict (`BASE`, `DATA`, `RF`, `XGBoost`, `FAIRNESS`) |
+| `load_artifacts(models_dir)` | Loads model + scaler + label encoders + feature names from a model directory |
+| `load_raw_with_split()` | Reloads the raw CSV and rebuilds the label-encoded, unscaled frame (recovers readable demographics + `AgeGroup`) |
+| `load_pickle(path)` | Small pickle-loading helper |
+| `ScaledModelWrapper` | Wraps a model + its scaler so DiCE can pass **unscaled** data; applies the scaler internally on `predict` / `predict_proba` |
+| `build_recourse_dataset()` | Runs DiCE on all at-risk employees and returns a tidy DataFrame (one row per employee) |
+| `decode_row()` | Converts integer-encoded categoricals back to readable labels |
+| `mean_l1()` | Normalised L1 distance between a query and its counterfactuals |
+| `changed_features()` | Which features differ between a query row and a counterfactual |
+
+### Key constants
+
+| Constant | Value | Meaning |
+|----------|-------|---------|
+| `SEED_PREPROCESSING` | `42` | Split seed used in notebook 1 |
+| `SEED_DICE` | `48` | Seed used by the model / DiCE notebooks |
+| `THRESHOLD_RF` | `0.489` | RF decision threshold (re-tuned in 2.a) |
+| `THRESHOLD_XGB` | `0.592` | XGBoost decision threshold (re-tuned in 2.b) |
+| `MAX_SALARY_INCREASE` | `0.50` | Default salary cap for recourse (+50%) |
+| `AGE_THRESHOLD` | `35` | `AgeGroup = "Young"` if `Age < 35` else `"Senior"` |
+| `PROTECTED_ATTRIBUTES` | `["Gender", "AgeGroup", "MaritalStatus"]` | Attributes audited for fairness |
+| `IMMUTABLE` | `DEMOGRAPHIC + TIME + HISTORICAL` | Features DiCE may not change |
+| `PERMITTED_RANGE` | dict | Allowed ranges for mutable ordinal features |
+
+`IMMUTABLE` is built from three groups:
+- **Demographic:** Age, Gender, MaritalStatus, EducationField, Department
+- **Time:** YearsAtCompany, YearsInCurrentRole, YearsSinceLastPromotion, YearsWithCurrManager, TotalWorkingYears, NumCompaniesWorked
+- **Historical:** PercentSalaryHike, PerformanceRating, Education, HourlyRate, DailyRate, MonthlyRate
+
+> ⚠️ `THRESHOLD_RF` and `THRESHOLD_XGB` are placeholders that **must be updated**
+> after (re)running the model notebooks if the optimal thresholds change.
 
 ---
 
-## Notebook 04b — Sensitivity Analysis: Salary Cap
+## Notebook 1 — Data Preprocessing
 
-**Why it exists separately from 04:**
-Notebook 04 takes ~10 minutes to run. If we put the sensitivity analysis in the same notebook, every re-run would take 40+ minutes. Separating them means 04 runs once and produces the baseline; 04b explores variations independently.
+Loads the raw CSV, runs exploratory data analysis (shape, types, missing values,
+class distribution), cleans the data, and saves scaled train/val/test splits plus
+the fitted scaler, feature names, and label encoders to `data/processed/`.
 
-**What it does:**
-Re-runs the full DiCE pipeline three times with different salary cap constraints:
+It also defines the **DiCE feature taxonomy** — classifying every feature as
+immutable / ordinal / nominal / continuous — which is the prerequisite for any
+counterfactual configuration downstream. The constant `Over18` column is dropped
+because it carries no information.
+
+---
+
+## Notebooks 2.a & 2.b — Random Forest and XGBoost
+
+Each notebook trains one classifier on the preprocessed splits, runs a
+hyperparameter search, tunes an optimal decision threshold, evaluates on the test
+set (ROC / PR curves, confusion matrix, MDI feature importances), and exports the
+model together with its scaler, label encoders, and feature names so DiCE can
+later reconstruct the exact same pipeline.
+
+**Headline results:**
+- **Random Forest** flags 281 at-risk employees — recall 88.2%, precision 74.4% (more cautious).
+- **XGBoost** flags 227 — recall 81.9%, precision 85.5% (more precise, less cautious).
+
+---
+
+## Notebook 3.a — Recourse Dataset + Level 1: Prediction Fairness
+
+1. Loads the RF and XGBoost models.
+2. Runs DiCE on **all** at-risk employees (not just a small sample), producing a
+   recourse dataset with one row per employee: whether a counterfactual was found,
+   its L1 cost, and which features changed.
+3. Computes **Level 1** prediction fairness — statistical parity, equal
+   opportunity, predictive equality — across Gender, AgeGroup, and MaritalStatus.
+
+**Key result:** both models find recourse for ~99–100% of at-risk employees at the
++50% cap, and group-level prediction gaps are small. This is where the analysis
+*starts* — the interesting disparities only appear at Levels 2 and 3.
+
+---
+
+## Notebook 3.b — Sensitivity Analysis: Salary Cap
+
+Re-runs the full DiCE pipeline three times under different salary-cap constraints
+to test whether the near-100% effectiveness in 3.a is robust or just an artefact
+of a generous budget.
 
 | Config | Cap | Rationale |
 |--------|-----|-----------|
 | `tight` | +20% | Realistic retention offer |
 | `moderate` | +35% | Generous but plausible |
-| `loose` | +50% | Original team configuration (baseline) |
+| `loose` | +50% | Original baseline (matches 3.a) |
 
-**Key results:**
-- Effectiveness stays high (~97-100%) at all salary cap levels — restringere il budget non crea disparità drammatiche
-- However, **XGBoost shows growing gaps** as the cap tightens:
-  - MaritalStatus effectiveness gap: 0.017 (loose) → 0.034 (tight)
-  - AgeGroup effectiveness gap: 0.013 (loose) → 0.026 (tight)
-- Random Forest remains stable across all configurations — gaps stay near zero
+Kept separate from 3.a deliberately: 3.a takes ~10 min, so folding the sensitivity
+sweep into it would make every re-run take 40+ min. Same reproducibility logic as
+separating preprocessing from analysis.
+
+**Key result:** effectiveness stays high (~97–100%) at all caps, but **XGBoost's
+gaps grow as the cap tightens** (e.g. MaritalStatus effectiveness gap 0.017 → 0.034;
+AgeGroup 0.013 → 0.026), while **Random Forest stays stable** near zero.
 
 ---
 
-## Notebook 05 — Counterfactual Fairness
+## Notebook 4 — Level 2: Counterfactual Fairness (Kusner et al., 2017)
 
-**What it does:**
-Implements the individual-level fairness test from Kusner et al. (2017): for each employee, flip a protected attribute (Gender or Age) and check whether the model's prediction changes. A high flip rate means the model depends on that attribute.
+Individual-level test: for each employee, flip a protected attribute (Gender or
+Age) and check whether the prediction changes. A high flip rate means the model
+depends on that attribute. Run on the full population (1470) and on at-risk
+employees only.
 
-The test runs on two populations:
-- **Full population (1470 employees):** does the model treat anyone differently based on their protected attributes?
-- **At-risk employees only:** among those already flagged, does flipping an attribute save them?
-
-**Why MaritalStatus is excluded:**
-MaritalStatus has three categories (Single/Married/Divorced). Flipping it requires choosing a target category, which introduces an arbitrary choice that would make the flip rate depend on the direction chosen rather than on the model's fairness. Gender and Age have natural, unambiguous flip operations.
-
-**Key results:**
+**MaritalStatus is excluded** here: with three categories, flipping requires
+choosing an arbitrary target, which would make the flip rate depend on the chosen
+direction rather than on the model's fairness. Gender and Age have natural,
+unambiguous flips.
 
 | Model | Flip Gender (full) | Flip Age (full) | Flip Age (at-risk) |
-|-------|-------------------|-----------------|-------------------|
+|-------|--------------------|-----------------|--------------------|
 | Random Forest | 0.7% | 6.8% | 10.7% |
 | XGBoost | 0.5% | 4.9% | 10.6% |
 
-- **Gender: both models are fair** — flipping Gender changes less than 1% of predictions
-- **Age: moderate dependence** — 6-7% of all employees change outcome; this rises to ~10.7% among at-risk employees, meaning Age plays a stronger role in deciding *who gets flagged* than in general predictions
-- The at-risk flip rate being ~double the full-population rate is the key finding: Age influences the flagging decision disproportionately
+**Key result:** Gender is essentially fair (<1% flips) for both models; Age shows
+moderate dependence that **roughly doubles among at-risk employees** — Age weighs
+more heavily on *who gets flagged* than on predictions in general.
 
 ---
 
-## Notebook 06 — FACTS: Fairness of the Recourse
+## Notebook 5 — Level 3: FACTS, Fairness of the Recourse (Kavouras et al., NeurIPS 2023)
 
-**What it does:**
-Implements the four fairness notions from FACTS (Kavouras, Sacharidis et al., NeurIPS 2023) on the recourse datasets produced by notebooks 04 and 04b.
+Computes the four FACTS notions on the recourse datasets from 3.a (baseline) and
+3.b (sensitivity).
 
-**The four FACTS notions:**
+| Notion | Question | Measure |
+|--------|----------|---------|
+| Equal Effectiveness | Same share of each group finds recourse? | share with ≥1 valid CF |
+| Equal Cost of Effectiveness | Same cost to find recourse? | median L1 cost |
+| Equal Effectiveness within Budget | Same share finds *cheap* recourse? | share with L1 ≤ global median |
+| Equal Choice for Recourse | Same number of options? | mean number of CFs |
 
-| Notion | Question | How we measure it |
-|--------|----------|-------------------|
-| Equal Effectiveness | Does the same share of each group find recourse? | share with ≥1 valid CF |
-| Equal Cost of Effectiveness | Does each group pay the same cost? | median L1 cost |
-| Equal Effectiveness within Budget | Does the same share find *cheap* recourse? | share with L1 ≤ global median cost |
-| Equal Choice for Recourse | Does each group get the same number of options? | mean number of CFs |
+The **unfairness score** for each notion is the max−min gap across subgroups (0 =
+perfectly fair).
 
-**Key results — baseline (+50% salary cap):**
-
-The most important finding is that **Equal Effectiveness gaps are near zero** — all groups find recourse at similar rates. This would suggest the models are fair. However:
-
-| Model | Attribute | Cost gap | Within-budget gap |
-|-------|-----------|----------|------------------|
-| RF | MaritalStatus | 0.125 ⚠️ | 0.195 ⚠️ |
-| XGBoost | MaritalStatus | 0.159 ⚠️ | 0.242 ⚠️ |
-| RF | Gender | 0.052 | 0.070 |
-| XGBoost | Gender | 0.043 | 0.005 |
-
-**Single employees pay systematically more** for the same recourse:
-- 62% of Single employees must change their StockOptionLevel vs 19% of Divorced
-- 48% must increase training vs 27% of Married employees
-
-**XGBoost is consistently more unfair than RF** across all attributes and metrics — and this gap widens as the salary cap tightens (sensitivity analysis).
+**Key result — baseline (+50% cap):** Equal Effectiveness gaps are near zero (so a
+shallow audit would call the models fair), but **Cost** and **within-Budget** gaps
+reveal that **Single employees pay systematically more** for the same recourse
+(e.g. 62% of Single employees must change StockOptionLevel vs 19% of Divorced).
+**XGBoost is consistently more unfair than RF** across attributes, and the gap
+widens as the salary budget tightens.
 
 ---
 
 ## Main conclusion
 
-> The models appear fair when looking at prediction rates (Level 1) and are largely
-> fair at the individual level for Gender (Level 2). However, the recourse analysis
-> (Level 3) reveals that **Single employees and, to a lesser extent, Male employees
-> face systematically higher costs to achieve the same outcome**. This disparity
-> is hidden by Equal Effectiveness metrics and only surfaces through the
-> Cost of Effectiveness and Effectiveness within Budget measures from FACTS.
->
-> Furthermore, **XGBoost distributes recourse costs more unequally than Random
-> Forest**, and this inequality grows as the employer's salary budget decreases.
-> If the goal is to retain employees equitably, Random Forest is the fairer
-> choice — not because it predicts better, but because its recourse is more
-> equally distributed.
+The models look fair on prediction rates (Level 1) and are largely fair at the
+individual level for Gender (Level 2). But the recourse analysis (Level 3) shows
+that **Single employees — and to a lesser extent some subgroups — face systematically
+higher costs to reach the same outcome**. This disparity is invisible to Equal
+Effectiveness and only surfaces through the Cost-of-Effectiveness and
+Effectiveness-within-Budget measures.
 
-This finding directly operationalises the claim of Von Kügelgen et al. (2022)
-that *recourse fairness is complementary to prediction fairness* — and
-demonstrates it empirically on a real HR dataset with the team's own models.
+**XGBoost distributes recourse cost more unequally than Random Forest**, and that
+inequality grows as the employer's budget shrinks. If the goal is to retain
+employees *equitably*, Random Forest is the fairer choice — not because it predicts
+better, but because its recourse is more evenly distributed. This empirically
+demonstrates the claim of Von Kügelgen et al. (2022) that **recourse fairness is
+complementary to prediction fairness**.
 
 ---
 
 ## References
 
-- Kavouras et al. (2023). *FACTS: Fairness-Aware Counterfactuals for Subgroups*. NeurIPS 2023.
-- Kusner et al. (2017). *Counterfactual Fairness*. NeurIPS 2017.
-- Von Kügelgen et al. (2022). *On the Fairness of Causal Algorithmic Recourse*. AAAI 2022.
-- Wachter et al. (2017). *Counterfactual Explanations without Opening the Black Box*. Harvard JOLT.
+- Kavouras et al. (2023). *FACTS: Fairness-Aware Counterfactuals for Subgroups.* NeurIPS 2023.
+- Kusner et al. (2017). *Counterfactual Fairness.* NeurIPS 2017.
+- Von Kügelgen et al. (2022). *On the Fairness of Causal Algorithmic Recourse.* AAAI 2022.
+- Mothilal et al. (2020). *Explaining ML Classifiers through Diverse Counterfactual Explanations (DiCE).* ACM FAT*.
+- Wachter et al. (2017). *Counterfactual Explanations without Opening the Black Box.* Harvard JOLT.
