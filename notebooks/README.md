@@ -22,15 +22,15 @@ The notebooks run **in order**. Each one depends on the outputs of the previous.
 1  →  2.a / 2.b  →  3.a  →  3.b  →  4  →  5
 ```
 
-| # | Notebook | What it produces | Author |
-|---|----------|------------------|--------|
-| 1 | `1_Preprocessing.ipynb` | Cleaned, scaled train/val/test splits + DiCE feature taxonomy | Team |
-| 2.a | `2_a__Random_Forest.ipynb` | Trained Random Forest + saved artifacts | Kamila |
-| 2.b | `2_b__XGboost.ipynb` | Trained XGBoost + saved artifacts | Kamila |
-| 3.a | `3_a__Recourse & Prediction Fairness.ipynb` | Recourse dataset (DiCE on all at-risk employees) + **Level 1** fairness | Matteo |
-| 3.b | `3_b__Sensitivity_analysis.ipynb` | Recourse datasets under three salary-cap configs | Matteo |
-| 4 | `4__Counterfactual_Fairness.ipynb` | **Level 2** individual counterfactual fairness | Matteo |
-| 5 | `5__FACTS.ipynb` | **Level 3** FACTS recourse fairness + final synthesis | Matteo |
+| # | Notebook | What it produces | 
+|---|----------|------------------|
+| 1 | `1_Preprocessing.ipynb` | Cleaned, scaled train/val/test splits + DiCE feature taxonomy | 
+| 2.a | `2_a__Random_Forest.ipynb` | Trained Random Forest + saved artifacts |
+| 2.b | `2_b__XGboost.ipynb` | Trained XGBoost + saved artifacts |
+| 3.a | `3_a__Recourse & Prediction Fairness.ipynb` | Recourse dataset (DiCE on all at-risk employees) + **Level 1** fairness | 
+| 3.b | `3_b__Sensitivity_analysis.ipynb` | Recourse datasets under three salary-cap configs |
+| 4 | `4__Counterfactual_Fairness.ipynb` | **Level 2** individual counterfactual fairness |
+| 5 | `5__FACTS.ipynb` | **Level 3** FACTS recourse fairness + final synthesis | 
 
 > **Note on numbering.** Earlier drafts of the fairness notebooks were numbered
 > `04 → 04b → 05 → 06`. They have been renumbered to `3.a → 3.b → 4 → 5` so the
