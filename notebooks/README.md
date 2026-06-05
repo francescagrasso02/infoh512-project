@@ -22,21 +22,15 @@ The notebooks run **in order**. Each one depends on the outputs of the previous.
 1  →  2.a / 2.b  →  3.a  →  3.b  →  4  →  5
 ```
 
-| # | Notebook | What it produces | 
+| # | Notebook | What it produces |
 |---|----------|------------------|
-| 1 | `1_Preprocessing.ipynb` | Cleaned, scaled train/val/test splits + DiCE feature taxonomy | 
-| 2.a | `2_a__Random_Forest.ipynb` | Trained Random Forest + saved artifacts |
-| 2.b | `2_b__XGboost.ipynb` | Trained XGBoost + saved artifacts |
-| 3.a | `3_a__Recourse & Prediction Fairness.ipynb` | Recourse dataset (DiCE on all at-risk employees) + **Level 1** fairness | 
-| 3.b | `3_b__Sensitivity_analysis.ipynb` | Recourse datasets under three salary-cap configs |
-| 4 | `4__Counterfactual_Fairness.ipynb` | **Level 2** individual counterfactual fairness |
-| 5 | `5__FACTS.ipynb` | **Level 3** FACTS recourse fairness + final synthesis | 
-
-> **Note on numbering.** Earlier drafts of the fairness notebooks were numbered
-> `04 → 04b → 05 → 06`. They have been renumbered to `3.a → 3.b → 4 → 5` so the
-> whole project reads as a single end-to-end sequence. Some notebook cells still
-> reference the old numbers; the mapping is `04 → 3.a`, `04b → 3.b`, `05 → 4`,
-> `06 → 5`.
+| 1 | `1.Preprocessing.ipynb` | Cleaned, scaled train/val/test splits + DiCE feature taxonomy |
+| 2.a | `2.a. Random Forest.ipynb` | Trained Random Forest + saved artifacts |
+| 2.b | `2.b. XGboost.ipynb` | Trained XGBoost + saved artifacts |
+| 3.a | `3.a. Recourse & Prediction Fairness.ipynb` | Recourse dataset (DiCE on all at-risk employees) + **Level 1** fairness |
+| 3.b | `3.b. Sensitivity_analysis.ipynb` | Recourse datasets under three salary-cap configs |
+| 4 | `4. Counterfactual Fairness.ipynb` | **Level 2** individual counterfactual fairness |
+| 5 | `5. FACTS.ipynb` | **Level 3** FACTS recourse fairness + final synthesis |
 
 ---
 
@@ -61,13 +55,13 @@ and **MaritalStatus**.
 infoh512-project/
 ├── notebooks/
 │   ├── utils.py                                   ← shared functions & constants
-│   ├── 1_Preprocessing.ipynb
-│   ├── 2_a__Random_Forest.ipynb
-│   ├── 2_b__XGboost.ipynb
-│   ├── 3_a__Recourse & Prediction Fairness.ipynb
-│   ├── 3_b__Sensitivity_analysis.ipynb
-│   ├── 4__Counterfactual_Fairness.ipynb
-│   └── 5__FACTS.ipynb
+│   ├── 1.Preprocessing.ipynb
+│   ├── 2.a. Random Forest.ipynb
+│   ├── 2.b. XGboost.ipynb
+│   ├── 3.a. Recourse & Prediction Fairness.ipynb
+│   ├── 3.b. Sensitivity_analysis.ipynb
+│   ├── 4. Counterfactual Fairness.ipynb
+│   └── 5. FACTS.ipynb
 ├── data/
 │   ├── WA_Fn-UseC_-HR-Employee-Attrition.csv      ← raw dataset
 │   ├── processed/                                 ← splits + scaler + encoders (notebook 1)
@@ -194,26 +188,24 @@ names so DiCE can later reconstruct the exact same pipeline.
 | Recall (Attrition) | 90.7% | 83.1% |
 | Precision (Attrition) | 86.3% | 60.6% |
 
-**At-risk population entering the recourse analysis (full dataset, n = 1470):**
+**At-risk population entering the recourse analysis (full dataset, n = 1470, at model threshold τ):**
 
 | Model | At-risk flagged | Recall | Precision |
 |-------|-----------------|--------|-----------|
-| Random Forest | 249 (16.9%) | 90.7% | 86.3% |
-| XGBoost | 325 (22.1%) | 83.1% | 60.6% |
+| Random Forest (τ = 0.489) | 249 (16.9%) | 90.7% | 86.3% |
+| XGBoost (τ = 0.592) | 325 (22.1%) | 83.1% | 60.6% |
 
-XGBoost is more sensitive on the minority class (higher F1) but much less precise:
-~40% of its flagged employees are false positives, so it carries a larger and
-noisier at-risk population into the fairness analysis. Random Forest has stronger
-overall discrimination (ROC-AUC / PR-AUC).
+XGBoost is more sensitive on the minority class (higher F1) but much less precise.
+Random Forest has stronger overall discrimination (ROC-AUC / PR-AUC).
 
 ---
 
 ## Notebook 3.a — Recourse Dataset + Level 1: Prediction Fairness
 
 1. Loads the RF and XGBoost models.
-2. Runs DiCE on **all** at-risk employees, producing a recourse dataset with one
-   row per employee: whether a counterfactual was found, its L1 cost, and which
-   features changed.
+2. Runs DiCE on **all** at-risk employees (proba ≥ model threshold τ), producing a
+   recourse dataset with one row per employee: whether a counterfactual was found,
+   its L1 cost, and which features changed.
 3. Computes **Level 1** prediction fairness — statistical parity, equal
    opportunity, predictive equality — across Gender, AgeGroup, and MaritalStatus.
 
@@ -271,23 +263,24 @@ Individual-level test: for each employee, flip Gender (Male ↔ Female) or shift
 15 years across the threshold of 35, holding all else constant, and record whether
 the prediction changes. A non-zero flip rate means the model depends on that
 attribute. Run on the full population and on at-risk employees only.
+Each model uses its own tuned threshold (τ = 0.489 for RF, τ = 0.592 for XGB).
 
 **MaritalStatus is excluded:** with three categories there is no natural binary
 flip — choosing a target would make the result depend on the chosen direction.
 
 | Population | Model | Gender flip | Age shift |
 |------------|-------|-------------|-----------|
-| Full (n = 1470) | Random Forest | 1.9% | 13.4% |
-| Full (n = 1470) | XGBoost | 2.0% | 6.8% |
+| Full (n = 1470) | Random Forest | 0.3% | 7.8% |
+| Full (n = 1470) | XGBoost | 1.6% | 9.9% |
 | At-risk only | Random Forest (n = 249) | 0.0% | 0.0% |
 | At-risk only | XGBoost (n = 325) | 0.0% | 0.0% |
 
 **Key result:** Gender is essentially fair for both models. Age shows moderate
-dependence across the full population (more so for RF). But among employees already
-flagged as at-risk, the flip rate is **0% for both attributes and both models** —
-once an employee is flagged, changing their gender or age does not change the
-verdict. The model uses protected attributes only as a general population-level
-risk correlate, not to decide *who gets flagged*.
+dependence across the full population. But among employees already flagged as
+at-risk, the flip rate is **0% for both attributes and both models** — once an
+employee is flagged, changing their gender or age does not change the verdict.
+The model uses protected attributes only as a general population-level risk
+correlate, not to decide *who gets flagged*.
 
 ---
 
